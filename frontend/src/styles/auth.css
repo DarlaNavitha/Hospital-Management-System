@@ -1,0 +1,53 @@
+/* ===== AUTH PAGE CONTAINER ===== */
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* ===== GLASS CARD ===== */
+.form,
+.reg {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+
+    padding: 2.5rem;
+    max-width: 420px;
+    width: 100%;
+
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+
+    color: white;
+}
+
+/* ===== INPUTS ===== */
+.form input,
+.reg input,
+.form select,
+.reg select {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* ===== BUTTON ===== */
+.form button,
+.reg button {
+    background: linear-gradient(135deg, #38bdf8, #3b82f6);
+    color: white;
+}
+
+.form button:hover {
+    background: black;
+}

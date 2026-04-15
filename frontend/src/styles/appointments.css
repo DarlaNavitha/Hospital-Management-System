@@ -1,0 +1,319 @@
+/* ===== PAGE ===== */
+.home.container-lg {
+    min-height: 100vh;
+    padding: 100px 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.8), rgba(2,6,23,0.95)),
+        url("../assets/hosp4.jpeg") center/cover no-repeat;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER ===== */
+/* CENTER THE INNER CONTENT */
+.home.container-lg .page-header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* KEEP HEADER CENTERED */
+.home.container-lg .page-header {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    position: relative;
+    text-align: center;
+}
+
+/* FIX HEADING VISIBILITY */
+.home.container-lg .page-header h1 {
+    font-size: 2.2rem;
+    border: 20PX;
+    text-align: center;
+    background: none !important;
+    color: #38bdf8 !important;
+    -webkit-text-fill-color: #38bdf8 !important;
+}
+
+/* SUB TEXT */
+.home.container-lg .page-header p {
+    color: #94a3b8;
+}
+
+/* BACK BUTTON */
+.home.container-lg .outline-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 6px 14px;
+    border-radius: 8px;
+
+    border: 1px solid #38bdf8;
+    background: transparent;
+    color: #38bdf8;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.home.container-lg .outline-btn:hover {
+    background: rgba(56,189,248,0.2);
+    color: black;
+}
+
+/* ===== SEARCH ===== */
+.home.container-lg .search-card {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 15px 20px;
+    margin-bottom: 25px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.home.container-lg .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home.container-lg .search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+/* ===== LIST ===== */
+.home.container-lg .appointments-list {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.home.container-lg .appointment-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 20px;
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.2),
+        0 0 40px rgba(59,130,246,0.1);
+
+    transition: 0.3s;
+}
+
+.home.container-lg .appointment-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== HEADER INSIDE CARD ===== */
+.home.container-lg .appointment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* TITLE ROW */
+.home.container-lg .title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home.container-lg h3 {
+    color: #38bdf8;
+}
+
+/* HISTORY BUTTON */
+.home.container-lg .small-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+
+    border-radius: 6px;
+    border: 1px solid #06b6d4;
+
+    background: transparent;
+    color: #06b6d4;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.home.container-lg .small-btn:hover {
+    background: rgba(6,182,212,0.2);
+}
+
+/* MUTED TEXT */
+.home.container-lg .muted {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* ===== PATIENT INFO ===== */
+.home.container-lg .patient-info {
+    margin-top: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 8px;
+}
+
+.home.container-lg .patient-info div {
+    font-size: 0.85rem;
+}
+
+.home.container-lg .patient-info .full {
+    grid-column: 1 / -1;
+}
+
+/* BLOOD */
+.home.container-lg .blood {
+    color: #ef4444;
+}
+
+/* ===== STATUS ===== */
+.home.container-lg .status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+.home.container-lg .status.confirmed {
+    background: rgba(34,197,94,0.2);
+    color: #22c55e;
+}
+
+.home.container-lg .status.pending {
+    background: rgba(250,204,21,0.2);
+    color: #eab308;
+}
+
+.home.container-lg .status.cancelled {
+    background: rgba(239,68,68,0.2);
+    color: #ef4444;
+}
+
+/* ===== HISTORY ===== */
+.home.container-lg .history-box {
+    margin-top: 15px;
+    padding: 12px;
+
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+}
+
+.home.container-lg .history-item {
+    margin-bottom: 10px;
+}
+
+.home.container-lg .history-item strong {
+    display: block;
+}
+
+.home.container-lg .history-item span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* ===== ACTION ===== */
+.home.container-lg .action-box {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home.container-lg .action-box input {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+/* BUTTONS */
+.home.container-lg .success-btn,
+.home.container-lg .danger-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* CONFIRM */
+.home.container-lg .success-btn {
+    background: #16a34a;
+    color: white;
+}
+
+/* REJECT */
+.home.container-lg .danger-btn {
+    background: #dc2626;
+    color: white;
+}
+
+/* TIME */
+.home.container-lg .time {
+    margin-top: 10px;
+    color: #22c55e;
+}
+
+/* EMPTY */
+/* EMPTY CARD (GLASS STYLE) */
+.home.container-lg .empty {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 25px;
+    border-radius: 16px;
+
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #94a3b8;
+
+    background: rgba(255,255,255,0.05);   /* 🔥 glass */
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.15),
+        0 0 40px rgba(59,130,246,0.08);
+
+    transition: 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT (BLUE GLOW LIKE YOUR CARDS) */
+.home.container-lg .empty:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(6,182,212,0.35),
+        0 0 50px rgba(59,130,246,0.2);
+
+    border-color: rgba(56,189,248,0.3);
+}

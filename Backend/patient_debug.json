@@ -1,0 +1,94 @@
+{
+  "fields": [
+    "name",
+    "email",
+    "age",
+    "gender",
+    "phone",
+    "address",
+    "bloodGroup",
+    "userId",
+    "createdAt",
+    "_id",
+    "__v"
+  ],
+  "data": [
+    {
+      "_id": "6984c1ddadafbb587e86b2c1",
+      "name": "usha",
+      "age": 25,
+      "gender": "female",
+      "phone": "99887744554",
+      "address": "hyderabad",
+      "bloodgroup": "O+",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c219adafbb587e86b2c3",
+      "name": "kiran",
+      "age": 32,
+      "gender": "male",
+      "phone": "99887744553",
+      "address": "kadapa",
+      "bloodgroup": "A+",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c260adafbb587e86b2c5",
+      "name": "suresh",
+      "age": 40,
+      "gender": "male",
+      "phone": "99882244553",
+      "address": "banglore",
+      "bloodgroup": "B-",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c2a1adafbb587e86b2c7",
+      "name": "praveen",
+      "age": 10,
+      "gender": "male",
+      "phone": "77882244553",
+      "address": "chennai",
+      "bloodgroup": "O-",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c2dcadafbb587e86b2c9",
+      "name": "sushma",
+      "age": 23,
+      "gender": "female",
+      "phone": "77692244553",
+      "address": "vizag",
+      "bloodgroup": "AB-",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c302adafbb587e86b2cb",
+      "name": "kaveri",
+      "age": 50,
+      "gender": "female",
+      "phone": "77695844553",
+      "address": "kurnool",
+      "bloodgroup": "B+",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    },
+    {
+      "_id": "6984c32cadafbb587e86b2cd",
+      "name": "srujana",
+      "age": 62,
+      "gender": "female",
+      "phone": "77695856553",
+      "address": "nellore",
+      "bloodgroup": "O-",
+      "__v": 0,
+      "createdAt": "2026-02-22T13:56:55.974Z"
+    }
+  ]
+}

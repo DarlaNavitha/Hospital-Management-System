@@ -1,0 +1,158 @@
+/* ===== PAGE ===== */
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.55), rgba(2,6,23,0.95)),
+        url("../assets/hosp.jpg") center/cover no-repeat;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.register-container {
+    width: 900px;
+    max-width: 95%;
+    padding: 30px;
+    border-radius: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    background: #0b1220;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    color: #e2e8f0;
+
+    position: relative;
+}
+
+/* 🔥 CONTAINER HOVER EFFECT */
+.register-container {
+    transition: all 0.3s ease;
+}
+
+.register-container:hover {
+    transform: translateY(-6px) scale(1.01);
+
+    border: 1px solid rgba(34, 211, 238, 0.614);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.8),
+        0 0 20px rgba(30, 138, 155, 0.334);
+}
+
+/* ===== LEFT & RIGHT ===== */
+.register-left,
+.register-right {
+    flex: 1;
+    min-width: 280px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* LEFT STYLE */
+.register-left {
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding-right: 20px;
+}
+
+/* RIGHT STYLE */
+.register-right {
+    padding-left: 10px;
+}
+
+/* ===== HEADINGS ===== */
+.register-left h2,
+.register-right h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* ===== INPUTS ===== */
+.register-container input,
+.register-container select,
+.register-container textarea {
+    padding: 12px 14px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #0f172a;
+    color: #e2e8f0;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.register-container input::placeholder,
+.register-container textarea::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+/* focus */
+.register-container input:focus,
+.register-container select:focus,
+.register-container textarea:focus {
+    border-color: #22d3ee;
+    background: #020617;
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+    min-height: 80px;
+    resize: none;
+}
+
+/* ===== BUTTON AREA ===== */
+.register-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* BUTTON */
+.register-bottom button {
+    padding: 12px 40px;
+    border-radius: 10px;
+    border: none;
+
+    background: #22d3ee;
+    color: #020617;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* hover */
+.register-bottom button:hover {
+    background: #06b6d4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+    }
+
+    .register-left {
+        border-right: none;
+        padding-right: 0;
+    }
+}

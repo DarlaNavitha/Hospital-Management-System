@@ -1,0 +1,153 @@
+/* ===== PAGE BACKGROUND (MATCH PRESCRIPTIONS) ===== */
+.myapp-page {
+    min-height: 100vh;
+    padding: 100px 5% 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.95)),
+        url("../assets/hosp4.jpg") center/cover no-repeat;
+
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== TITLE ===== */
+.page-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ===== GRID ===== */
+.appointments-grid {
+    width: 100%;
+    max-width: 1100px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ===== CARD ===== */
+.myapp-page .glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(18px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.myapp-page .glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(56,189,248,0.3);
+}
+
+/* ===== APPOINTMENT CARD ===== */
+.appointment-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.specialization {
+    color: #38bdf8;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* ===== PATIENT BOX ===== */
+.patient-box {
+    background: rgba(255,255,255,0.04);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 12px 0;
+}
+
+/* ===== DATE & TIME ===== */
+.appointment-card p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+}
+
+/* ===== CONFIRMED BOX ===== */
+.confirmed-box {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 8px;
+
+    background: rgba(34,197,94,0.2);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    font-weight: 600;
+}
+
+/* ===== STATUS ===== */
+.status-text {
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.status {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+/* STATUS COLORS */
+.status.confirmed {
+    color: #22c55e;
+}
+
+.status.pending {
+    color: #f59e0b;
+}
+
+.status.cancelled {
+    color: #ef4444;
+}
+
+/* ===== EMPTY CARD (CENTER STYLE LIKE PRESCRIPTIONS) ===== */
+.empty-card {
+    width: 100%;
+    max-width: 800px;
+
+    text-align: center;
+    padding: 40px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(18px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    margin: 40px auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .appointments-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

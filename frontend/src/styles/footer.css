@@ -1,0 +1,129 @@
+/* ===== FOOTER BASE ===== */
+.footer {
+    background: #020617 !important; /* solid dark */
+    backdrop-filter: blur(20px);
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 3.5rem 0 1.5rem;
+
+    color: #ffffff !important;
+}
+
+.footer * {
+    color: inherit !important;
+}
+
+/* CENTER CONTAINER */
+.footer-grid {
+    max-width: 1200px;          /* ✅ center content */
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; /* ✅ balanced layout */
+    gap: 3rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* COLUMN */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* BRAND */
+.footer-brand {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #38bdf8;
+}
+
+/* TITLES */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #60a5fa;
+}
+
+/* TEXT */
+.footer-text {
+    color: #cbd5f5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 300px;  /* ✅ prevents stretching */
+}
+
+/* LIST */
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    color: #cbd5f5;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.footer-list li:hover {
+    color: #38bdf8;
+    transform: translateX(5px);
+}
+
+/* CONTACT ALIGN FIX */
+.footer-col:last-child {
+    align-items: flex-start;
+}
+
+/* SOCIAL */
+.footer-social {
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    font-size: 1.2rem;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.footer-brand {
+    color: #38bdf8 !important;
+}
+
+.footer-title {
+    color: #60a5fa !important;
+}
+
+.footer-text {
+    color: #e2e8f0 !important;
+}
+
+.footer-list li {
+    color: #cbd5f5 !important;
+}
+
+.footer-bottom {
+    color: #94a3b8 !important;
+}
+body {
+    opacity: 0.8;
+}

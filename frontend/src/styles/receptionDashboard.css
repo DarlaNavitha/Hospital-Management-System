@@ -1,0 +1,244 @@
+/* ===== PAGE WRAPPER ===== */
+.reception-page {
+    min-height: 100vh;
+    padding: 100px 5%;
+
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* 🔥 BACKGROUND IMAGE + OVERLAY */
+    background: linear-gradient(rgba(2,6,23,0.55), rgba(2,6,23,0.95)),
+                url("../assets/hosp2.jpg") center/cover no-repeat fixed;
+}
+
+/* ===== TITLE ===== */
+.reception-page .page-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ===== GRID ===== */
+.reception-page .dashboard-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD (GLASS EFFECT) ===== */
+.reception-page .card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 25px;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.15),
+        0 0 40px rgba(59,130,246,0.1);
+}
+
+/* HOVER */
+.reception-page .card:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,0.5),
+        0 0 60px rgba(59,130,246,0.2);
+}
+
+/* ICON */
+.reception-page .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.reception-page .card h3 {
+    margin-bottom: 5px;
+}
+
+.reception-page .card p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* ===== RECENT APPOINTMENTS CARD ===== */
+.reception-page .recent-card {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 30px;
+    text-align: center;
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.2),
+        0 0 40px rgba(59,130,246,0.1);
+
+    transition: 0.3s;
+}
+
+.reception-page .recent-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== HEADER ===== */
+.reception-page .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* ===== BUTTON ===== */
+.reception-page .outline-btn {
+    padding: 8px 18px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(56,189,248,0.5);
+    background: black;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.reception-page .outline-btn:hover {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+/* ===== LIST ===== */
+.reception-page .appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===== ITEM ===== */
+.reception-page .appointment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+.reception-page .appointment-item:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+}
+
+/* LEFT */
+.reception-page .appointment-left strong {
+    font-size: 1rem;
+}
+
+/* META */
+.reception-page .meta {
+    display: flex;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* BLOOD */
+.reception-page .blood {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* DATE */
+.reception-page .date {
+    font-size: 0.85rem;
+    color: #38bdf8;
+}
+
+/* DOCTOR */
+.reception-page .doctor {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* RIGHT */
+.reception-page .appointment-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+/* STATUS */
+.reception-page .status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+/* STATUS COLORS */
+.reception-page .status.confirmed {
+    background: rgba(34,197,94,0.2);
+    color: #22c55e;
+}
+
+.reception-page .status.pending {
+    background: rgba(250,204,21,0.2);
+    color: #eab308;
+}
+
+/* TIME */
+.reception-page .time {
+    font-size: 0.8rem;
+    color: #38bdf8;
+}
+
+/* EMPTY */
+.reception-page .empty {
+    text-align: center;
+    padding: 15px;
+    color: #94a3b8;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .reception-page .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .reception-page .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}

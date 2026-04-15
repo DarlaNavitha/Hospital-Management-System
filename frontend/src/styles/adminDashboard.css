@@ -1,0 +1,197 @@
+/* ===== PAGE ===== */
+.admin-dashboard {
+    min-height: 100vh;
+    padding: 110px 5% 60px;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.7), rgba(2,6,23,0.95)),
+        url("../assets/hosp4.jpeg") center/cover no-repeat;
+
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== TITLE ===== */
+.page-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* ===== GRID ===== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+/* HOVER */
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(56,189,248,0.35);
+}
+
+/* ===== ACTION CARD ===== */
+.action-card {
+    text-align: center;
+    cursor: pointer;
+}
+
+/* ICON */
+.icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+/* TEXT INSIDE CARD */
+.action-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.action-card p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+/* ===== TABLE CARD ===== */
+.table-card {
+    max-width: 900px;   /* 🔥 reduced width */
+    margin: 0 auto;     /* 🔥 center container */
+}
+
+.table-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.doctor-table {
+    width: 100%;
+    
+    /* 🔥 ADD COLUMN GAP */
+    border-collapse: separate;
+    border-spacing: 25px 12px;  /* horizontal gap | vertical gap */
+
+    font-size: 1.2rem;
+}
+
+/* HEAD */
+.doctor-table th {
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* ROW */
+.doctor-table td {
+    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+/* RIGHT ALIGN */
+.right {
+    text-align: center;
+}
+
+/* ===== BADGE ===== */
+.badge {
+    background: rgba(56,189,248,0.2);
+    color: #38bdf8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* ===== BUTTON BASE ===== */
+.edit-btn,
+.delete-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.25s;
+}
+
+/* EDIT */
+.edit-btn {
+    background: #22d3ee;
+    color: #020617;
+}
+
+.edit-btn:hover {
+    background: #06b6d4;
+}
+
+/* DELETE */
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+/* ===== OPTIONAL "GO BUTTON STYLE" ===== */
+.go-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+
+    border-radius: 10px;
+    border: 1px solid #38bdf8;
+
+    background: black;
+    color: #38bdf8;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+/* HOVER */
+.go-btn:hover {
+    background: #38bdf8;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .action-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .doctor-table {
+        font-size: 0.9rem;
+    }
+}

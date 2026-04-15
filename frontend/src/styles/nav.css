@@ -1,0 +1,96 @@
+/* ===== NAVBAR ===== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+
+    background: linear-gradient(135deg, #1e3a8a, #2563eb); /* 🔥 BLUE */
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== BRAND ===== */
+.brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff; /* white text */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== LINKS ===== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link {
+    color: #e0f2fe; /* light blue */
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: black; /* 🔥 hover black */
+    color: white;
+}
+
+/* ===== OUTLINE BUTTON ===== */
+.btn-outline {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: black; /* 🔥 hover black */
+    color: white;
+    border-color: black;
+}
+
+/* ===== GRADIENT BUTTON ===== */
+.btn-gradient {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn-gradient:hover {
+    background: black; /* 🔥 hover black */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background: black; /* 🔥 hover black */
+}

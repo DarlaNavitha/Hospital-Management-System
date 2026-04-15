@@ -1,0 +1,144 @@
+/* ===== PAGE (FIXED FOR APP LAYOUT) ===== */
+.reset-page {
+    min-height: calc(100vh - 140px); /* adjust for navbar + footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.7), rgba(2,6,23,0.95)),
+        url("../assets/hosp.jpg") center/cover no-repeat;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.reset-container {
+    width: 850px;
+    max-width: 100%;
+    display: flex;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 400px;
+
+    background: #0b1220;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.reset-container:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.9),
+        0 0 25px rgba(34,211,238,0.3);
+}
+
+/* ===== LEFT ===== */
+.reset-left {
+    flex: 1;
+    background: #38bdf8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reset-left h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #020617;
+}
+
+.reset-left p {
+    color: #020617;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* ===== RIGHT ===== */
+.reset-right {
+    flex: 1;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+
+    background: #020617;
+    color: #e2e8f0;
+}
+
+/* TITLE */
+.reset-right h2 {
+    font-size: 1.5rem;
+}
+
+/* MESSAGE */
+.reset-right p {
+    font-size: 0.85rem;
+    color: #38bdf8;
+}
+
+/* INPUT */
+.reset-right input {
+    padding: 12px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #0f172a;
+
+    color: white;
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.reset-right input:focus {
+    border-color: #22d3ee;
+    box-shadow: 0 0 8px rgba(34,211,238,0.4);
+}
+
+/* BUTTON */
+.reset-right button {
+    margin-top: 10px;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: none;
+
+    background: #22d3ee;
+    color: #020617;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.reset-right button:hover {
+    background: #06b6d4;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .reset-container {
+        flex-direction: column;
+    }
+
+    .reset-left {
+        display: none;
+    }
+}

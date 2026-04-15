@@ -1,0 +1,218 @@
+/* ===== PAGE (DARK GLASS BACKGROUND) ===== */
+.home.form-container {
+    min-height: 100vh;
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.8), rgba(2,6,23,0.95)),
+        url("../assets/hosp4.jpeg") center/cover no-repeat;
+    color: white;
+}
+
+/* ===== HEADER CARD ===== */
+.home .header-card {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px;
+    margin-bottom: 30px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.2),
+        0 0 40px rgba(59,130,246,0.1);
+}
+
+/* HEADER TEXT */
+.home .header-card h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+.home .header-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* CANCEL BUTTON */
+.home .glass-btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(56,189,248,0.4);
+    background: transparent;
+    color: #38bdf8;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.home .glass-btn:hover {
+    background: rgba(56,189,248,0.2);
+    color: black;
+}
+
+/* ===== FORM CARD ===== */
+.home .form-card {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.2),
+        0 0 40px rgba(59,130,246,0.1);
+}
+
+/* ===== FORM GROUP ===== */
+.home .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.home .form-group label {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* ===== INPUTS ===== */
+.home input,
+.home select {
+    padding: 14px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(8, 62, 103, 0.674);
+
+    color: rgb(250, 250, 250);
+    outline: none;
+
+    transition: 0.25s;
+}
+
+/* HOVER */
+.home input:hover,
+.home select:hover {
+    border-color: #38bdf8;
+}
+
+/* FOCUS */
+.home input:focus,
+.home select:focus {
+    border-color: #06b6d4;
+    box-shadow: 0 0 12px rgba(56,189,248,0.4);
+}
+
+/* ===== ROW ===== */
+.home .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== PREVIEW CARD ===== */
+.home .preview-card {
+    margin-bottom: 20px;
+    padding: 18px;
+
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+
+    border-left: 4px solid #38bdf8;
+}
+
+.home .preview-card h4 {
+    margin-bottom: 10px;
+}
+
+/* GRID */
+.home .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 10px;
+}
+
+.home .preview-grid span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.home .preview-grid strong {
+    color: white;
+}
+
+.home .preview-grid .blood {
+    color: #ef4444;
+}
+
+.home .preview-grid .full {
+    grid-column: 1/-1;
+}
+
+/* ===== BUTTON ===== */
+.home .primary-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+
+    border-radius: 12px;
+    border: none;
+
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: white;
+
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home .primary-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(56,189,248,0.6);
+}
+
+/* ===== ERROR ===== */
+.home .error-box {
+    background: rgba(239,68,68,0.15);
+    color: #f87171;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ===== LOADING ===== */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top: 4px solid #38bdf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

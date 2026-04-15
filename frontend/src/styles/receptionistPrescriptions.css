@@ -1,0 +1,234 @@
+/* ===== PAGE ===== */
+.home.container-lg {
+    min-height: 100vh;
+    padding: 100px 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.95)),
+        url("../assets/hosp3.jpg") center/cover no-repeat;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.home.container-lg .page-header {
+    width: 100%;
+    max-width: 900px;
+
+    position: relative;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+/* FIX HEADING */
+.home.container-lg .page-header h1 {
+    font-size: 2.2rem;
+    background: none !important;
+    color: #38bdf8 !important;
+    -webkit-text-fill-color: #38bdf8 !important;
+}
+
+/* SUB TEXT */
+.home.container-lg .sub-text {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* BACK BUTTON */
+.home.container-lg .outline-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    padding: 6px 14px;
+    border-radius: 8px;
+
+    border: 1px solid #38bdf8;
+    background: transparent;
+    color: #38bdf8;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.home.container-lg .outline-btn:hover {
+    background: rgba(56,189,248,0.2);
+    color: black;
+}
+
+/* ===== SEARCH ===== */
+.home.container-lg .search-box {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 20px;
+    margin-bottom: 25px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.home.container-lg .search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+/* ===== GRID ===== */
+.home.container-lg .dashboard-grid.single {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.home.container-lg .prescription-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 20px;
+
+    box-shadow:
+        0 0 20px rgba(6,182,212,0.2),
+        0 0 40px rgba(59,130,246,0.1);
+
+    transition: 0.3s;
+}
+
+.home.container-lg .prescription-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 25px rgba(6,182,212,0.4),
+        0 0 50px rgba(59,130,246,0.2);
+}
+
+/* ===== HEADER ===== */
+.home.container-lg .presc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home.container-lg .presc-header h3 {
+    color: #38bdf8;
+}
+
+/* DATE */
+.home.container-lg .date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* DOCTOR */
+.home.container-lg .doctor {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #38bdf8;
+}
+
+/* ===== MEDICINES ===== */
+.home.container-lg .med-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.home.container-lg .med-box h4 {
+    margin-bottom: 8px;
+    color: #facc15;
+}
+
+.home.container-lg .med-box ul {
+    padding-left: 18px;
+    font-size: 0.9rem;
+}
+
+/* ===== BILL ===== */
+.home.container-lg .bill-box {
+    margin-top: 15px;
+    padding: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.home.container-lg .bill-box span {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.home.container-lg .bill-box strong {
+    color: white;
+}
+
+.home.container-lg .bill-box .total {
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* ===== EMPTY STATE ===== */
+.home.container-lg .empty-state {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 40px;
+    border-radius: 16px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border: 1px dashed rgba(255,255,255,0.15);
+
+    transition: 0.3s;
+}
+
+.home.container-lg .empty-state:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(56,189,248,0.4);
+
+    box-shadow:
+        0 0 25px rgba(6,182,212,0.3),
+        0 0 50px rgba(59,130,246,0.15);
+}
+
+.home.container-lg .empty-state h3 {
+    color: #38bdf8;
+    margin-top: 10px;
+}
+
+.home.container-lg .empty-state p {
+    color: #94a3b8;
+}

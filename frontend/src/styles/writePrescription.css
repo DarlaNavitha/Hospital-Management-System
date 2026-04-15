@@ -1,0 +1,235 @@
+/* PAGE */
+.prescription-page {
+    min-height: 100vh;
+    padding: 100px 5%;
+    background:
+        linear-gradient(rgba(2,6,23,0.5), rgba(2,6,23,0.95)),
+        url("../assets/hosp3.jpg") center/cover no-repeat;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.prescription-page .page-header h1 {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    margin-bottom: 70px !important;
+
+}
+
+/* BACK BUTTON */
+.back-btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(56,189,248,0.5);
+    background: transparent;
+    color: #38bdf8;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: white;
+}
+
+/* GLASS CARD */
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+/* MAIN CARD */
+.main-card {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+/* SELECT FIX */
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0, 0, 0, 0.4); /* 🔥 darker glass */
+    color: white;
+    text-align: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    appearance: none; /* remove default UI */
+}
+
+/* DROPDOWN OPTIONS */
+select option {
+    background: #020617;   /* 🔥 dark background */
+    color: white;
+}
+
+/* PATIENT INFO */
+.patient-info h3 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-grid div {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.info-grid span {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.info-grid strong {
+    font-size: 0.9rem;
+}
+
+.info-grid .full {
+    grid-column: span 2;
+}
+
+.blood {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* MED SECTION */
+.med-section {
+    margin-top: 20px;
+}
+
+.med-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.med-header h3 {
+    color: #38bdf8;
+}
+
+/* ADD BUTTON */
+.add-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(41, 147, 192, 0.5);
+    background: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: rgb(0, 0, 0);
+    border: #06b6d4;
+}
+
+/* MED CARD */
+.med-card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* GRID */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* REMOVE BUTTON */
+.remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* FINANCE BOX */
+.finance-box {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.finance-box h3 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+/* TOTAL */
+.total {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    display: block;
+    margin: 20px auto 0;
+
+    padding: 10px 25px;
+    border-radius: 12px;
+
+    background: rgb(0, 0, 0);
+    color: white;
+
+    border: 1px solid rgb(32, 95, 173);
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    box-shadow: 0 0 12px rgba(56,189,248,0.5);
+}

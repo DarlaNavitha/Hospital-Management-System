@@ -1,0 +1,179 @@
+/* ===== PAGE BACKGROUND (KEEP SAME) ===== */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.8), rgba(2,6,23,0.95)),
+        url("../assets/hosp.jpg") center/cover no-repeat;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.login-container {
+    width: 900px;
+    max-width: 95%;
+    height: 520px;
+
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+
+    background: #0b1220;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease;
+}
+
+/* 🔥 Hover effect */
+.login-container:hover {
+    transform: translateY(-6px) scale(1.01);
+
+    border: 1px solid rgba(34, 211, 238, 0.727);
+
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.8),
+        0 0 20px rgba(34, 211, 238, 0.464);
+}
+
+/* ===== LEFT PANEL ===== */
+.login-left {
+    flex: 1;
+
+    background: #38bff8b4; /* light blue */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login-left h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #020617; /* black */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-left p {
+    font-size: 1.2rem;
+    color: #020617;
+    opacity: 0.8;
+    max-width: 260px;
+    text-align: center;
+    font-family:cursive;
+    
+}
+
+/* ===== RIGHT PANEL ===== */
+.login-right {
+    flex: 1;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #020617;
+    color: #e2e8f0;
+
+    gap: 10px;
+}
+
+.login-right h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* ===== INPUT FIELDS ===== */
+.login-right input {
+    margin-bottom: 15px;
+    padding: 12px 14px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: #0f172a;
+    color: #e2e8f0;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.login-right input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.login-right input:focus {
+    border-color: #22d3ee;
+    background: #020617;
+}
+
+/* ===== BUTTON ===== */
+.login-right button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+
+    background: #22d3ee;
+    color: #020617;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.login-right button:hover {
+    background: #06b6d4;
+}
+
+/* ===== ERROR ===== */
+.error {
+    color: #ef4444;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* ===== FORGOT PASSWORD ===== */
+.forgot {
+    margin-top: 12px;
+    text-align: center;
+    display: block;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    color: #22d3ee;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .login-left {
+        display: none;
+    }
+}

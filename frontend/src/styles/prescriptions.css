@@ -1,0 +1,180 @@
+/* ===== PAGE BACKGROUND ===== */
+.prescriptions-page {
+    min-height: 100vh;
+    padding: 100px 20px 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.95)),
+        url("../assets/hosp3.jpg") center/cover no-repeat;
+
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+/* ===== TITLE ===== */
+.prescriptions-page .page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* ===== LIST ===== */
+.prescriptions-page .prescriptions-list {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.prescriptions-page .prescription-card {
+   background: rgba(255,255,255,0.05);  /* 👈 KEY FIX */
+    backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(56,189,248,0.2);
+
+    padding: 20px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    transition: 0.3s;
+}
+
+.prescriptions-page .prescription-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.9),
+        0 0 25px rgba(56,189,248,0.3);
+}
+
+.prescriptions-page .glass-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== HEADER ===== */
+.prescriptions-page .prescription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.prescriptions-page .prescription-header h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.prescriptions-page .date {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* ===== MEDICINE ===== */
+.prescriptions-page .medicine-box {
+    margin-top: 10px;
+}
+
+.prescriptions-page .medicine-box h4 {
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.prescriptions-page .medicine-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.prescriptions-page .med-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prescriptions-page .med-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.prescriptions-page .dosage {
+    color: #38bdf8;
+}
+
+.prescriptions-page .instructions {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+/* ===== NOTES ===== */
+.prescriptions-page .notes-box {
+    margin-top: 10px;
+    padding: 10px;
+
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+
+    color: #e2e8f0;
+}
+
+/* ===== BILLING ===== */
+.prescriptions-page .billing-box {
+    margin-top: 15px;
+}
+
+.prescriptions-page .bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    color: #e2e8f0;
+}
+
+.prescriptions-page .bill-total {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #22c55e;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===== EMPTY CARD ===== */
+.prescriptions-page .empty-card {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 40px;
+    text-align: center;
+
+    background: rgba(2,6,23,0.85);
+    border-radius: 16px;
+    border: 1px solid rgba(56,189,248,0.2);
+
+    color: #ffffff;
+    font-size: 1.1rem;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .prescriptions-page {
+        padding: 120px 15px 50px;
+    }
+
+    .prescriptions-page .prescription-card {
+        padding: 15px;
+    }
+}
