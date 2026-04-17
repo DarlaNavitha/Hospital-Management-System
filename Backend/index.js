@@ -28,6 +28,10 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("connected successfully"))
     .catch(err => console.log("connection error:", err));
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/doctors", doctorRoutes);
@@ -36,9 +40,6 @@ app.use("/api/appointments", appointmentRoutes);
 app.use("/api/prescriptions", prescriptionRoutes);
 app.use("/api/users", userRoutes);
 
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
 
 // Server
 const PORT = process.env.PORT || 5000;
