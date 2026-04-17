@@ -10,7 +10,7 @@ const ReceptionDashboard = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await axios.get("/appointments/");
+                const res = await API.get("/appointments/");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);

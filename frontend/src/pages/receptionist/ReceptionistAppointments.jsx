@@ -14,7 +14,7 @@ const ReceptionistAppointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await axios.get("/appointments/");
+                const res = await API.get("/appointments/");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);
@@ -32,7 +32,7 @@ const ReceptionistAppointments = () => {
         }
 
         try {
-            await axios.put(`/appointments/${id}/status`, { status, attendingTime });
+            await API.put(`/appointments/${id}/status`, { status, attendingTime });
             alert("Updated");
             window.location.reload();
         } catch {
@@ -50,7 +50,7 @@ const ReceptionistAppointments = () => {
             delete newHistory[patientId];
             setHistory(newHistory);
         } else {
-            const res = await axios.get(`/prescriptions/patient/${patientId}`);
+            const res = await API.get(`/prescriptions/patient/${patientId}`);
             setHistory({ ...history, [patientId]: res.data });
         }
     };

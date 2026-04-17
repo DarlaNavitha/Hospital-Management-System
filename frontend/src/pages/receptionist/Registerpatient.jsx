@@ -27,7 +27,7 @@ const RegisterPatient = () => {
         }
 
         try {
-            const res = await axios.post("/patients", {
+            const res = await API.post("/patients", {
                 ...data,
                 age: Number(data.age) || 0
             });

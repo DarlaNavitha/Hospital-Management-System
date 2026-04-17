@@ -12,7 +12,7 @@ const ReceptionistPrescriptions = () => {
     useEffect(() => {
         const fetchPrescriptions = async () => {
             try {
-                const res = await axios.get("/prescriptions");
+                const res = await API.get("/prescriptions");
                 setPrescriptions(res.data);
             } catch (err) {
                 console.error(err);

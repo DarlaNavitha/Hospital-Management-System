@@ -17,8 +17,8 @@ const BookAppointment = () => {
             try {
                 setLoading(true);
                 const [docRes, patRes] = await Promise.all([
-                    axios.get("/doctors"),
-                    axios.get("/patients")
+                    API.get("/doctors"),
+                    API.get("/patients")
                 ]);
                 setDoctors(docRes.data);
                 setPatients(patRes.data);
@@ -45,7 +45,7 @@ const BookAppointment = () => {
             return alert("Please fill all required fields");
         }
         try {
-            const res = await axios.post("/appointments", data);
+            const res = await API.post("/appointments", data);
             alert(res.data.msg);
             navigate("/receptionist");
         } catch (err) {

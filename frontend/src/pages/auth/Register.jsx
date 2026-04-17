@@ -64,7 +64,7 @@ const Register = () => {
                 phone: data.number
             };
 
-            let res = await axios.post("/auth/register", submitData);
+            let res = await API.post("/auth/register", submitData);
 
             alert(res.data.msg);
             navigate("/Login");

@@ -12,7 +12,7 @@ const Appointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await axios.get("/appointments/doctor/current");
+                const res = await API.get("/appointments/doctor/current");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);
@@ -28,7 +28,7 @@ const Appointments = () => {
                 return alert("Please set an attending time before confirming.");
             }
 
-            await axios.put(`/appointments/${id}/status`, {
+            await API.put(`/appointments/${id}/status`, {
                 status,
                 attendingTime
             });
@@ -51,7 +51,7 @@ const Appointments = () => {
             setHistory(newHistory);
         } else {
             try {
-                const res = await axios.get(`/prescriptions/patient/${patientId}`);
+                const res = await API.get(`/prescriptions/patient/${patientId}`);
                 setHistory({ ...history, [patientId]: res.data });
             } catch (err) {
                 alert("Could not load medical history.");

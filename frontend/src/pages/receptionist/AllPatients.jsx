@@ -13,7 +13,7 @@ const AllPatients = () => {
     useEffect(() => {
         const fetchPatients = async () => {
             try {
-                const res = await axios.get("/patients");
+                const res = await API.get("/patients");
                 setPatients(res.data);
             } catch (err) {
                 console.error(err);
@@ -37,7 +37,7 @@ const AllPatients = () => {
             setHistory(newHistory);
         } else {
             try {
-                const res = await axios.get(`/prescriptions/patient/${patientId}`);
+                const res = await API.get(`/prescriptions/patient/${patientId}`);
                 setHistory({ ...history, [patientId]: res.data });
             } catch {
                 alert("Could not load history");

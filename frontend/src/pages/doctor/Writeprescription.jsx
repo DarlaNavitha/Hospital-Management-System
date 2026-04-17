@@ -12,7 +12,7 @@ const WritePrescription = () => {
     useEffect(() => {
         const fetchPatients = async () => {
             try {
-                const res = await axios.get("/patients");
+                const res = await API.get("/patients");
                 setPatients(res.data);
             } catch (err) {
                 console.error(err);
@@ -43,7 +43,7 @@ const WritePrescription = () => {
                 return alert("Please select a patient and provide medicine names");
             }
 
-            await axios.post("/prescriptions", { ...data, medicines });
+            await API.post("/prescriptions", { ...data, medicines });
             alert("Prescription submitted successfully!");
             navigate("/doctor");
         } catch (err) {

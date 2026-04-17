@@ -8,7 +8,7 @@ const Prescriptions = () => {
     useEffect(() => {
         const fetchPrescriptions = async () => {
             try {
-                const res = await axios.get("/prescriptions/patient/current");
+                const res = await API.get("/prescriptions/patient/current");
                 setPrescriptions(res.data);
             } catch (err) {
                 console.error(err);

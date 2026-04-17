@@ -29,7 +29,7 @@ const ManageDoctors = () => {
 
     const fetchDoctors = async () => {
         try {
-            const res = await axios.get("/doctors");
+            const res = await API.get("/doctors");
             setDoctors(res.data);
         } catch (err) {
             console.error(err);
@@ -40,7 +40,7 @@ const ManageDoctors = () => {
 
     const handleAdd = async () => {
         try {
-            await axios.post("/doctors", newData);
+            await API.post("/doctors", newData);
 
             alert("Doctor added successfully");
 
@@ -63,7 +63,7 @@ const ManageDoctors = () => {
     // DELETE 
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure?")) {
-            await axios.delete(`/doctors/${id}`);
+            await API.delete(`/doctors/${id}`);
             fetchDoctors();
         }
     };
@@ -84,7 +84,7 @@ const ManageDoctors = () => {
     //  Update
     const handleUpdate = async () => {
         try {
-            await axios.put(`/doctors/${editingDoctor}`, editData);
+            await API.put(`/doctors/${editingDoctor}`, editData);
 
             alert("Updated successfully");
 

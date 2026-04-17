@@ -11,7 +11,7 @@ const PatientDashboard = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const res = await axios.get("/patients/profile/me");
+                const res = await API.get("/patients/profile/me");
                 setPatientInfo(res.data);
             } catch (err) {
                 console.error("Could not fetch patient profile", err);

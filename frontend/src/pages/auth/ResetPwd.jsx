@@ -32,7 +32,7 @@ const ResetPwd = () => {
       setLoading(true);
       setMsg("");
 
-      const res = await axios.post("/auth/sendotp", {
+      const res = await API.post("/auth/sendotp", {
         email: data.email
       });
 
@@ -58,7 +58,7 @@ const ResetPwd = () => {
       setLoading(true);
       setMsg("");
 
-      const res = await axios.post("/auth/verifyotp", {
+      const res = await API.post("/auth/verifyotp", {
         email: data.email,
         otp: data.otp
       });
@@ -89,7 +89,7 @@ const ResetPwd = () => {
       setLoading(true);
       setMsg("");
 
-      const res = await axios.post("/auth/resetpwd", {
+      const res = await API.post("/auth/resetpwd", {
         email: data.email,
         otp: data.otp,
         password: data.password

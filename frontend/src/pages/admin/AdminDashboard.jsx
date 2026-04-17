@@ -10,7 +10,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
-                const res = await axios.get("/doctors");
+                const res = await API.get("/doctors");
                 setDoctors(res.data);
             } catch (err) {
                 console.error(err);

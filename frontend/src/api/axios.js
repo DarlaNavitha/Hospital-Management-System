@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const API = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://hospital-management-system-dxf5.onrender.com/api",
 });
 
 //  REQUEST INTERCEPTOR

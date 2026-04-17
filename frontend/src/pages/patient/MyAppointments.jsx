@@ -8,7 +8,7 @@ const MyAppointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await axios.get("/appointments/patient/current");
+                const res = await API.get("/appointments/patient/current");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);

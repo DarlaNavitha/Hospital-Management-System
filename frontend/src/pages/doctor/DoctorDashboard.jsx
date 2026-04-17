@@ -11,10 +11,10 @@ const DoctorDashboard = () => {
     useEffect(() => {
         const fetchProfileData = async () => {
             try {
-                const appRes = await axios.get("/appointments/doctor/current");
+                const appRes = await API.get("/appointments/doctor/current");
                 setAppointments(appRes.data);
 
-                const docRes = await axios.get("/doctors/profile/me");
+                const docRes = await API.get("/doctors/profile/me");
                 setDoctorProfile(docRes.data);
             } catch (err) {
                 console.error(err);

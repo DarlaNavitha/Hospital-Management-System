@@ -38,7 +38,7 @@ const Login = () => {
                 email: data.email.trim().toLowerCase()
             };
 
-            let res = await axios.post("/auth/login", trimmedData);
+            let res = await API.post("/auth/login", trimmedData);
 
             if (res.data.token) {
                 Cookies.set("logininfo", res.data.token, { expires: 1 });

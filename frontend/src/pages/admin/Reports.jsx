@@ -14,9 +14,9 @@ const Reports = () => {
         const fetchStats = async () => {
             try {
                 const [docRes, patRes, appRes] = await Promise.all([
-                    axios.get("/doctors"),
-                    axios.get("/patients"),
-                    axios.get("/appointments")
+                    API.get("/doctors"),
+                    API.get("/patients"),
+                    API.get("/appointments")
                 ]);
 
                 setStats({
