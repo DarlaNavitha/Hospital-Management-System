@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "../../api/axios.js";
+import API from "../../api/axios.js";
 import "../../styles/myAppointments.css"; 
 
 const MyAppointments = () => {

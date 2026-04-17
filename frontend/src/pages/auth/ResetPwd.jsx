@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "../../api/axios";
+import API from "../../api/axios";
 
 import "../../styles/resetPwd.css";
 
