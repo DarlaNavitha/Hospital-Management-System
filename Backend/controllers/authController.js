@@ -26,6 +26,8 @@ const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         user = new um({ name, email, password: hashedPassword, role });
         await user.save();
+        await user.save();
+        console.log("✅ USER SAVED:", user);
 
         // Create patient profile if role is patient
        if ((role || "patient") === "patient") {
