@@ -86,7 +86,7 @@ const Prescriptions = () => {
 
                             <div className="bill-total">
                                 <span>Total</span>
-                                <span>${(p.consultationFee || 0) + (p.prescriptionFee || 0)}</span>
+                                <span>₹{(p.consultationFee || 0) + (p.prescriptionFee || 0)}</span>
                             </div>
                         </div>
 
