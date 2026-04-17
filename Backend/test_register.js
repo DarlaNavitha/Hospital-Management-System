@@ -1,7 +1,7 @@
 const testMissing = async () => {
     try {
         console.log("Testing missing name...");
-        const res1 = await fetch('http://localhost:5000/api/auth/register', {
+        const res1 = await fetch('https://hospital-management-system-dxf5.onrender.com/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: "missing_name@example.com", password: "123" })
@@ -10,7 +10,7 @@ const testMissing = async () => {
         console.log("Data:", await res1.json());
 
         console.log("Testing role validation...");
-        const res2 = await fetch('http://localhost:5000/api/auth/register', {
+        const res2 = await fetch('https://hospital-management-system-dxf5.onrender.com/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

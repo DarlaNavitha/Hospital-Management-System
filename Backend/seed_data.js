@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const um = require('./models/usermodels');
 const dm = require('./models/doctormodels');
+require("dotenv").config();
 
 const seedData = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/v25hfs1hospital");
+        await mongoose.connect("process.env.MONGO_URI");
         console.log("Connected to DB...");
 
         const password = await bcrypt.hash("password123", 10);

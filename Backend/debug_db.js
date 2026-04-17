@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const pm = require("./models/patientmodels");
 
-mongoose.connect("mongodb://localhost:27017/v25hfs1hospital")
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGO_URI)
     .then(async () => {
         const count = await pm.countDocuments();
         console.log("Total patients:", count);

@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const um = require('./models/usermodels');
+require("dotenv").config();
 
 const listUsers = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/v25hfs1hospital");
+        await mongoose.connect(process.env.MONGO_URI)
         const users = await um.find({}, 'email role');
         console.log("Users in DB:", users);
         await mongoose.connection.close();
