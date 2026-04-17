@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 // Database Connection
-mongoose.connect("mongodb://127.0.0.1:27017/v25hfs1hospital")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("connected successfully"))
     .catch(err => console.log("connection error:", err));
 
@@ -36,8 +36,12 @@ app.use("/api/appointments", appointmentRoutes);
 app.use("/api/prescriptions", prescriptionRoutes);
 app.use("/api/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 // Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
