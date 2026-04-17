@@ -76,12 +76,12 @@ const Prescriptions = () => {
 
                             <div className="bill-row">
                                 <span>Consultation Fee</span>
-                                <span>${p.consultationFee || 0}</span>
+                                <span>₹{p.consultationFee || 0}</span>
                             </div>
 
                             <div className="bill-row">
                                 <span>Prescription Fee</span>
-                                <span>${p.prescriptionFee || 0}</span>
+                                <span>₹{p.prescriptionFee || 0}</span>
                             </div>
 
                             <div className="bill-total">

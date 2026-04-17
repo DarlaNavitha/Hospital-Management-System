@@ -112,14 +112,14 @@ const ReceptionistPrescriptions = () => {
                         <div className="bill-box">
                             <div>
                                 <span>Consultation</span>
-                                <strong>${p.consultationFee || 0}</strong>
+                                <strong>₹{p.consultationFee || 0}</strong>
                             </div>
                             <div>
                                 <span>Medicine</span>
-                                <strong>${p.amount || 0}</strong>
+                                <strong>₹{p.amount || 0}</strong>
                             </div>
                             <div className="total">
-                                Total: ${(Number(p.consultationFee) || 0) + (Number(p.amount) || 0)}
+                                Total: ₹{(Number(p.consultationFee) || 0) + (Number(p.amount) || 0)}
                             </div>
                         </div>
 

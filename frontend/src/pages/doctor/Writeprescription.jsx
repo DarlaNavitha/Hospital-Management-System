@@ -155,7 +155,7 @@ const WritePrescription = () => {
                     </div>
 
                     <div className="total">
-                        Total: $
+                        Total: ₹
                         {(parseInt(data.consultationFee) || 0) +
                          (parseInt(data.prescriptionFee) || 0)}
                     </div>
