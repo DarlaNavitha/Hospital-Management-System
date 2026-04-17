@@ -7,6 +7,8 @@ const register = async (req, res) => {
     try {
         console.log("Full registration request body:", req.body);
         let { name, email, password, role, age, gender, phone, bloodGroup, address } = req.body;
+        role = role || "patient";
+        role = role.toLowerCase();  
 
         if (!email || !password || !name) {
             console.log("Missing required fields");
@@ -26,24 +28,29 @@ const register = async (req, res) => {
         await user.save();
 
         // Create patient profile if role is patient
-        if (role === 'patient') {
+       if ((role || "patient") === "patient") {
             const pm = require("../models/patientmodels");
 
-            // Normalize bloodGroup casing
-            const normalizedBloodGroup = bloodGroup || req.body.bloodgroup || "Unknown";
+            console.log("Creating patient profile...");
 
-            const patient = new pm({
-                name,
-                email,
-                age: age || 0,
-                gender: gender || "other",
-                phone: phone || "0000000000",
-                bloodGroup: normalizedBloodGroup,
-                address: address || "To be updated",
-                userId: user._id
-            });
-            await patient.save();
-            console.log("Patient profile created for:", email);
+            try {
+                const patient = new pm({
+                    name,
+                    email,
+                    age: Number(age) || 0,
+                    gender: gender || "other",
+                    phone: phone || "0000000000",
+                    bloodGroup: bloodGroup || "Unknown",
+                    address: address || "To be updated",
+                    userId: user._id
+                });
+
+                const saved = await patient.save();
+                console.log("✅ Patient saved:", saved);
+
+            } catch (err) {
+                console.log("❌ Patient save failed:", err.message);
+            }
         }
 
         // Create initial doctor profile if role is doctor

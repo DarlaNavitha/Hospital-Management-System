@@ -88,11 +88,14 @@ const addPatient = async (req, res) => {
 
 const getPatients = async (req, res) => {
     try {
-        const patients = await pm.find();
+        const patients = await pm.find().populate("userId"); 
+        console.log("ALL PATIENTS:", patients); 
         res.json(patients);
     } catch (err) {
-        res.status(500).json({ msg: "Server Error" });
+        console.log("ERROR IN getPatients:", err.message);
+        res.status(500).json({ msg: "Error fetching patients" });
     }
+    
 };
 
 const getPatientById = async (req, res) => {

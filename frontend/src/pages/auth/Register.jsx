@@ -58,6 +58,7 @@ const Register = () => {
         try {
             const submitData = {
                 ...data,
+                role: "patient", 
                 email: data.email.trim().toLowerCase(),
                 age: Number(data.age) || 0,
                 phone: data.number
