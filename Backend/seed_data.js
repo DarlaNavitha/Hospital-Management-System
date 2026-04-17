@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const seedData = async () => {
     try {
-        await mongoose.connect("process.env.MONGO_URI");
+        await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to DB...");
 
         const password = await bcrypt.hash("password123", 10);
