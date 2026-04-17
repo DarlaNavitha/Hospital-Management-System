@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/doctorDashboard.css"; // 👈 add this
+import "../../styles/doctorDashboard.css"; 
 
 const DoctorDashboard = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const DoctorDashboard = () => {
                 </div>
             )}
 
-            {/* DASHBOARD CARDS */}
+           
             <div className="dashboard-grid">
 
                 <div className="dashboard-card" onClick={() => navigate("/doctor/appointments")}>
@@ -71,7 +71,6 @@ const DoctorDashboard = () => {
 
             </div>
 
-            {/* RECENT APPOINTMENTS */}
             <div className="glass-card recent-card">
 
                 <div className="recent-header">
@@ -79,7 +78,7 @@ const DoctorDashboard = () => {
                 </div>
 
                 <div className="recent-list">
-                    {/* existing list */}
+                    
                 </div>
 
                 <button

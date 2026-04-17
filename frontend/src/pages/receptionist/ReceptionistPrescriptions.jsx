@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/receptionistPrescriptions.css"; // 👈 add this
+import "../../styles/receptionistPrescriptions.css"; 
 
 const ReceptionistPrescriptions = () => {
     const navigate = useNavigate();
@@ -56,7 +56,7 @@ const ReceptionistPrescriptions = () => {
     return (
         <div className="home container-lg">
 
-            {/* Header */}
+          
             <div className="page-header">
                 <div>
                     <h1 className="gradient-text">📋 All Prescriptions</h1>
@@ -68,7 +68,6 @@ const ReceptionistPrescriptions = () => {
                 </button>
             </div>
 
-            {/* Search */}
             <div className="card search-box">
                 <span>🔍</span>
                 <input
@@ -79,7 +78,6 @@ const ReceptionistPrescriptions = () => {
                 />
             </div>
 
-            {/* List */}
             <div className="dashboard-grid single">
 
                 {filtered.length > 0 ? filtered.map(p => (
@@ -96,7 +94,6 @@ const ReceptionistPrescriptions = () => {
                             👨‍⚕️ Dr. {p.doctorId?.userId?.name || "Unknown"}
                         </p>
 
-                        {/* Medicines */}
                         <div className="med-box">
                             <h4>💊 Medicines</h4>
                             <ul>
@@ -111,7 +108,7 @@ const ReceptionistPrescriptions = () => {
                             </ul>
                         </div>
 
-                        {/* Billing */}
+                 
                         <div className="bill-box">
                             <div>
                                 <span>Consultation</span>

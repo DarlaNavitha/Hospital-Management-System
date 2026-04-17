@@ -65,7 +65,6 @@ const WritePrescription = () => {
 
             <div className="glass-card main-card">
 
-                {/* SELECT PATIENT */}
                 <div className="form-group">
                     <label>Select Patient</label>
                     <select
@@ -81,7 +80,7 @@ const WritePrescription = () => {
                     </select>
                 </div>
 
-                {/* PATIENT INFO */}
+               
                 {selectedPatient && (
                     <div className="glass-card patient-info">
                         <h3>👤 Patient Profile</h3>
@@ -96,7 +95,7 @@ const WritePrescription = () => {
                     </div>
                 )}
 
-                {/* MEDICINES */}
+             
                 <div className="med-section">
                     <div className="med-header">
                         <h3>💊 Medicines</h3>
@@ -136,7 +135,7 @@ const WritePrescription = () => {
                     ))}
                 </div>
 
-                {/* FINANCIAL */}
+               
                 <div className="glass-card finance-box">
                     <h3>💰 Financial Details</h3>
 

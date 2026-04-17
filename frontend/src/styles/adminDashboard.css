@@ -71,8 +71,8 @@
 
 /* ===== TABLE CARD ===== */
 .table-card {
-    max-width: 900px;   /* 🔥 reduced width */
-    margin: 0 auto;     /* 🔥 center container */
+    max-width: 900px;  
+    margin: 0 auto;    
 }
 
 .table-card h2 {

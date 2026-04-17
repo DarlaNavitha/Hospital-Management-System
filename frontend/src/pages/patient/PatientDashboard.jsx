@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Ct from "../../context/Ct.jsx";
 import axios from "../../api/axios.js";
-import "../../styles/patientDashboard.css"; // 👈 add this
+import "../../styles/patientDashboard.css"; 
 
 const PatientDashboard = () => {
     const obj = useContext(Ct);

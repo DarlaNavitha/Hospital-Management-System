@@ -89,7 +89,7 @@ const login = async (req, res) => {
 
         const user = await um.findOne({ email });
 
-        console.log("User from DB:", user); // 👈 DEBUG LINE
+        console.log("User from DB:", user); 
 
         if (!user) {
             console.log("User not found in DB:", email);

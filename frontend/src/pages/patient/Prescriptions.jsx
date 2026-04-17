@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "../../api/axios.js";
-import "../../styles/prescriptions.css"; // 👈 add this
+import "../../styles/prescriptions.css"; 
 
 const Prescriptions = () => {
     const [prescriptions, setPrescriptions] = useState([]);
@@ -40,7 +40,7 @@ const Prescriptions = () => {
                             </span>
                         </div>
 
-                        {/* MEDICINES */}
+                    
                         <div className="medicine-box">
                             <h4>💊 Medication Schedule</h4>
 
@@ -64,14 +64,13 @@ const Prescriptions = () => {
                             </div>
                         </div>
 
-                        {/* NOTES */}
                         {p.notes && (
                             <div className="notes-box">
                                 <strong>Doctor's Notes:</strong> {p.notes}
                             </div>
                         )}
 
-                        {/* BILLING */}
+                     
                         <div className="billing-box">
                             <h4>🧾 Billing Details</h4>
 

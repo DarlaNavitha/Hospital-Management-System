@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/bookAppointment.css"; // 👈 add this
+import "../../styles/bookAppointment.css"; 
 
 const BookAppointment = () => {
     const navigate = useNavigate();
@@ -80,7 +80,6 @@ const BookAppointment = () => {
 
                 {error && <p className="error-box">{error}</p>}
 
-                {/* Patient */}
                 <div className="form-group">
                     <label>Select Patient *</label>
                     <select name="patientId" value={data.patientId} onChange={fun}>
@@ -89,7 +88,6 @@ const BookAppointment = () => {
                     </select>
                 </div>
 
-                {/* Patient Preview */}
                 {data.patientId && (
                     <div className="preview-card">
                         <h4>👤 Patient Profile</h4>
@@ -110,7 +108,7 @@ const BookAppointment = () => {
                     </div>
                 )}
 
-                {/* Doctor */}
+             
                 <div className="form-group">
                     <label>Assign Doctor *</label>
                     <select name="doctorId" value={data.doctorId} onChange={fun}>
@@ -123,7 +121,6 @@ const BookAppointment = () => {
                     </select>
                 </div>
 
-                {/* Date & Time */}
                 <div className="form-row">
                     <div className="form-group">
                         <label>Date *</label>
@@ -136,7 +133,7 @@ const BookAppointment = () => {
                     </div>
                 </div>
 
-                {/* Reason */}
+               
                 <div className="form-group">
                     <label>Reason</label>
                     <input
@@ -148,9 +145,7 @@ const BookAppointment = () => {
                     />
                 </div>
 
-                <button className="primary-btn" onClick={book}>
-                    ✅ Confirm Appointment
-                </button>
+                <button className="primary-btn" onClick={book}>✅ Confirm Appointment</button>
 
             </div>
         </div>

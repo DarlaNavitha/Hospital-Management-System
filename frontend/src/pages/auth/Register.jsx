@@ -20,7 +20,7 @@ const Register = () => {
         address: ""
     });
 
-    // ✅ RESET STATE
+    // RESET STATE
     useEffect(() => {
         setData({
             name: "",
@@ -39,7 +39,7 @@ const Register = () => {
     const fun = (e) => {
         let { name, value } = e.target;
 
-        // ✅ PHONE VALIDATION
+        // PHONE VALIDATION
         if (name === "number") {
             if (!/^\d*$/.test(value)) return;
             if (value.length > 10) return;
@@ -78,11 +78,10 @@ const Register = () => {
 
             <div className="register-container">
 
-                {/* 🔥 AUTOFILL BLOCKERS */}
                 <input type="text" style={{ display: "none" }} autoComplete="off" />
                 <input type="password" style={{ display: "none" }} autoComplete="new-password" />
 
-                {/* LEFT */}
+               
                 <div className="register-left">
                     <h2>Create Account</h2>
 
@@ -123,7 +122,7 @@ const Register = () => {
                     />
                 </div>
 
-                {/* RIGHT */}
+                
                 <div className="register-right">
 
                     <h2>Medical Details</h2>
@@ -161,7 +160,7 @@ const Register = () => {
 
                 </div>
 
-                {/* BUTTON */}
+                
                 <div className="register-bottom">
                     <button onClick={register}>Register</button>
                 </div>

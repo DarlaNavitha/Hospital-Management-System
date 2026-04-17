@@ -36,7 +36,8 @@ const ManageDoctors = () => {
         }
     };
 
-    // ================= ADD =================
+    // Add
+
     const handleAdd = async () => {
         try {
             await axios.post("/doctors", newData);
@@ -59,7 +60,7 @@ const ManageDoctors = () => {
         }
     };
 
-    // ================= DELETE =================
+    // DELETE 
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure?")) {
             await axios.delete(`/doctors/${id}`);
@@ -67,7 +68,7 @@ const ManageDoctors = () => {
         }
     };
 
-    // ================= EDIT =================
+    // EDIT
     const handleEditClick = (doc) => {
         setEditingDoctor(doc._id);
 
@@ -80,6 +81,7 @@ const ManageDoctors = () => {
         setIsAdding(false);
     };
 
+    //  Update
     const handleUpdate = async () => {
         try {
             await axios.put(`/doctors/${editingDoctor}`, editData);
@@ -97,7 +99,7 @@ const ManageDoctors = () => {
     return (
         <div className="manage-page">
 
-            {/* HEADER */}
+           
             <div className="page-header">
                 <h1>👩‍⚕️ Manage Doctors</h1>
 
@@ -109,7 +111,6 @@ const ManageDoctors = () => {
                 </button>
             </div>
 
-            {/* ================= ADD FORM ================= */}
             {isAdding && (
                 <div className="glass-card form-card">
 
@@ -169,7 +170,6 @@ const ManageDoctors = () => {
                 </div>
             )}
 
-            {/* ================= EDIT FORM ================= */}
             {editingDoctor && (
                 <div className="glass-card form-card">
 
@@ -221,7 +221,7 @@ const ManageDoctors = () => {
                 </div>
             )}
 
-            {/* ================= TABLE ================= */}
+    
             <div className="glass-card table-card">
 
                 <table className="doctor-table">

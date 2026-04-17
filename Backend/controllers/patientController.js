@@ -21,17 +21,17 @@ const addPatient = async (req, res) => {
 
         email = email.trim().toLowerCase();
 
-        // 1️⃣ Check if user already exists
+       
         let existingUser = await um.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ msg: "User already exists with this email" });
         }
 
-        // 2️⃣ Generate TEMP password
+       
         const tempPassword = Math.random().toString(36).slice(-8); // random password
         const hashedPassword = await bcrypt.hash(tempPassword, 10);
 
-        // 3️⃣ Create USER (IMPORTANT FIX)
+       
         const user = new um({
             name,
             email,
@@ -41,7 +41,7 @@ const addPatient = async (req, res) => {
 
         await user.save();
 
-        // 4️⃣ Create PATIENT linked to user
+       
         const patient = new pm({
                             name,
                             email,
@@ -76,7 +76,7 @@ const addPatient = async (req, res) => {
 
         res.status(201).json({
             msg: "Patient + Login account created successfully",
-            tempPassword // 👈 send this (or email it)
+            tempPassword 
         });
         console.log("Generated password:", tempPassword);
 

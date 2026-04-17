@@ -78,7 +78,7 @@ const ReceptionistAppointments = () => {
     return (
         <div className="home container-lg">
 
-            {/* Header */}
+          
             <div className="page-header">
                 <div>
                     <h1 className="gradient-text">📅 All Appointments</h1>
@@ -90,7 +90,7 @@ const ReceptionistAppointments = () => {
                 </button>
             </div>
 
-            {/* Search */}
+          
             <div className="card search-card">
                 <div className="search-box">
                     <span>🔍</span>
@@ -103,7 +103,7 @@ const ReceptionistAppointments = () => {
                 </div>
             </div>
 
-            {/* List */}
+  
             <div className="appointments-list">
 
                 {filtered.length > 0 ? filtered.map(app => (
@@ -152,7 +152,7 @@ const ReceptionistAppointments = () => {
 
                         </div>
 
-                        {/* History */}
+                    
                         {history[app.patientId?._id] && (
                             <div className="history-box">
                                 <h4>📜 Prescriptions</h4>
@@ -172,7 +172,7 @@ const ReceptionistAppointments = () => {
                             </div>
                         )}
 
-                        {/* Actions */}
+                     
                         {app.status === "pending" && (
                             <div className="action-box">
 

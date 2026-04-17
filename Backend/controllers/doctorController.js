@@ -11,11 +11,9 @@ const addDoctor = async (req, res) => {
             return res.status(400).json({ msg: "Name and Email required" });
         }
 
-        // 1️⃣ Check if user already exists
         let user = await um.findOne({ email });
 
         if (!user) {
-            // 2️⃣ Create new doctor user
             const hashedPassword = await bcrypt.hash("password123", 10);
 
             user = new um({
@@ -28,15 +26,13 @@ const addDoctor = async (req, res) => {
             await user.save();
         }
 
-        // 3️⃣ Check if doctor profile already exists
         const existingDoctor = await dm.findOne({ userId: user._id });
         if (existingDoctor) {
             return res.status(400).json({ msg: "Doctor already exists" });
         }
 
-        // 4️⃣ Create doctor profile
         const newDoctor = new dm({
-            userId: user._id, // 🔥 THIS FIXES YOUR ERROR
+            userId: user._id,
             specialization,
             experience,
             consultationFee

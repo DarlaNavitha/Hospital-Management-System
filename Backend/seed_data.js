@@ -12,7 +12,7 @@ const seedData = async () => {
 
         const users = [
             { name: "Admin User", email: "admin@hospital.com", password, role: "admin" },
-            { name: "Dr. Smith", email: "doctor@hospital.com", password, role: "doctor" },
+            // { name: "Dr. Smith", email: "doctor@hospital.com", password, role: "doctor" },
             { name: "Receptionist User", email: "recep@hospital.com", password, role: "receptionist" },
             // { name: "Test Patient", email: "patient@hospital.com", password, role: "patient" }
         ];

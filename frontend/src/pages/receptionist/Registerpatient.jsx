@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/registerPatient.css"; // 👈 add this
+import "../../styles/registerPatient.css"; 
 
 const RegisterPatient = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const RegisterPatient = () => {
     return (
         <div className="home register-patient">
 
-            {/* Header */}
+         
             <div className="form-header">
 
                 <div className="header-center">
@@ -56,10 +56,10 @@ const RegisterPatient = () => {
 
             </div>
 
-            {/* Form */}
+        
             <div className="card form-card">
 
-                {/* Row */}
+
                 <div className="form-grid">
 
                     <div className="form-group">

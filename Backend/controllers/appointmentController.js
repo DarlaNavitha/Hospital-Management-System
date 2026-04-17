@@ -80,11 +80,4 @@ const getDoctorPatients = async (req, res) => {
     }
 };
 
-module.exports = {
-    addAppointment,
-    getAppointments,
-    updateAppointmentStatus,
-    getPatientAppointments,
-    getDoctorAppointments,
-    getDoctorPatients
-};
+module.exports = { addAppointment, getAppointments, updateAppointmentStatus, getPatientAppointments, getDoctorAppointments, getDoctorPatients };

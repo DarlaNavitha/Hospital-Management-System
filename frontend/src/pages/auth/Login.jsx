@@ -14,7 +14,7 @@ const Login = () => {
     let obj = useContext(Ct);
     let navigate = useNavigate();
 
-    // ✅ RESET STATE
+    // RESET STATE
     useEffect(() => {
         setData({ email: "", password: "" });
 
@@ -63,7 +63,7 @@ const Login = () => {
 
             <div className="login-container">
 
-                {/* LEFT */}
+              
                 <div className="login-left">
                     <div className="left-content">
                         <h2>WELCOME BACK!</h2>
@@ -71,14 +71,13 @@ const Login = () => {
                     </div>
                 </div>
 
-                {/* RIGHT */}
+               
                 <div className="login-right">
 
                     <h2>Login</h2>
 
                     {msg && <p className="error">{msg}</p>}
 
-                    {/* 🔥 AUTOFILL BLOCKERS */}
                     <input type="text" style={{ display: "none" }} autoComplete="off" />
                     <input type="password" style={{ display: "none" }} autoComplete="new-password" />
 

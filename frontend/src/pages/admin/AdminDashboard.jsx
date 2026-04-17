@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
-import "../../styles/adminDashboard.css"; // 👈 add this
+import "../../styles/adminDashboard.css";
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -24,7 +24,6 @@ const AdminDashboard = () => {
 
             <h1 className="page-title">Admin Management Portal</h1>
 
-            {/* ACTION CARD */}
             <div className="dashboard-grid">
 
                 <div
@@ -38,7 +37,6 @@ const AdminDashboard = () => {
 
             </div>
 
-            {/* TABLE */}
             <div className="glass-card table-card">
 
                 <h2>👨‍⚕️ Current Medical Staff</h2>

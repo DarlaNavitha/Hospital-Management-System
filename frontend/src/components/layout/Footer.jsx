@@ -7,7 +7,6 @@ const Footer = () => {
 
             <div className="footer-grid">
 
-                {/* Brand */}
                 <div className="footer-col">
                     <h3 className="footer-brand">🏥 MediCare Hospital</h3>
                     <p className="footer-text">
@@ -16,7 +15,6 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Links */}
                 <div className="footer-col">
                     <h4 className="footer-title">Quick Links</h4>
                     <ul className="footer-list">
@@ -28,14 +26,13 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Contact */}
+            
                 <div className="footer-col">
                     <h4 className="footer-title">Contact Details</h4>
                     <p className="footer-text">📍 123 Health Ave, Medical City</p>
                     <p className="footer-text">📞 +1 (800) 123-4567</p>
                     <p className="footer-text">✉️ info@medicarehosp.com</p>
 
-                    {/* Optional Social Icons */}
                     <div className="footer-social">
                         <span>🌐</span>
                         <span>📘</span>
@@ -46,7 +43,6 @@ const Footer = () => {
 
             </div>
 
-            {/* Bottom */}
             <div className="footer-bottom">
                 © {new Date().getFullYear()} MediCare Hospital. All rights reserved.
             </div>

@@ -39,7 +39,6 @@ const Reports = () => {
 
             <h1 className="page-title">📊 Hospital Reports & Analytics</h1>
 
-            {/* STATS */}
             <div className="stats-grid">
 
                 <div className="glass-card stat-card primary">
@@ -62,7 +61,7 @@ const Reports = () => {
 
             </div>
 
-            {/* UTILIZATION */}
+          
             <div className="glass-card utilization-card">
 
                 <h2>📈 Hospital Utilization</h2>
@@ -99,7 +98,7 @@ const Reports = () => {
 
             </div>
 
-            {/* RECENT ACTIVITY */}
+          
             <div className="glass-card activity-card">
 
                 <h2>Recent Activity Log</h2>

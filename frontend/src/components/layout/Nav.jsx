@@ -23,27 +23,20 @@ const Nav = () => {
                 MediCare Hospital
             </div>
 
-            {/* Links */}
             <div className="nav-links">
 
                 <Link to="/" className="nav-link">Home</Link>
 
                 {!obj.state.token && (
                     <>
-                        <Link to="/Login" className="btn-outline">
-                            🔑 Login
-                        </Link>
-
-                        <Link to="/register" className="btn-gradient">
-                            📝 Register
-                        </Link>
+                        <Link to="/Login" className="btn-outline">🔑 Login</Link>
+                        <Link to="/register" className="btn-gradient">📝 Register</Link>
                     </>
                 )}
 
                 {obj.state.token && (
                     <>
-                        <Link
-                            to={
+                        <Link to={
                                 obj.state.role?.toLowerCase() === 'admin' ? '/admin'
                                     : obj.state.role?.toLowerCase() === 'doctor' ? '/doctor'
                                         : obj.state.role?.toLowerCase() === 'receptionist' ? '/receptionist'

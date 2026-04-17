@@ -24,7 +24,6 @@ const ReceptionDashboard = () => {
 
             <h1 className="page-title">Receptionist Portal</h1>
 
-            {/* Action Cards */}
             <div className="dashboard-grid">
 
                 <div className="card dashboard-card" onClick={() => navigate("/receptionist/register-patient")}>
@@ -59,7 +58,7 @@ const ReceptionDashboard = () => {
 
             </div>
 
-            {/* Recent Appointments */}
+
             <div className="card recent-card">
 
                 <div className="card-header">

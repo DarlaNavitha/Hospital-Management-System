@@ -14,7 +14,7 @@ const Home = () => {
         navigate("/Login");
     };
 
-    // ================= LOGGED IN =================
+    // LOGGED IN 
     if (obj.state.token) {
         return (
             <div className="home-page">
@@ -60,11 +60,11 @@ const Home = () => {
         );
     }
 
-    // ================= PUBLIC HOME =================
+    //  PUBLIC HOME 
     return (
         <div className="home-page">
 
-            {/* HERO */}
+          
             <section className="hero">
                 <h1>
                     Expert Care, <span>Trusted Doctors</span>
@@ -78,7 +78,7 @@ const Home = () => {
                 </Link>
             </section>
 
-            {/* SERVICES */}
+        
             <section className="dashboard-section">
                 <h2 className="section-title">Our Services</h2>
 
@@ -100,7 +100,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* DOCTORS */}
+         
             <section className="dashboard-section">
                 <h2 className="section-title">Our Specialists</h2>
 
@@ -122,7 +122,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* CTA */}
+          
             <section className="cta-section">
                 <h2>Need Medical Help?</h2>
                 <p>Book your appointment now and get expert consultation.</p>

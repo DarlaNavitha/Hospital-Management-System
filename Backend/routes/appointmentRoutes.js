@@ -1,13 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {
-    addAppointment,
-    getAppointments,
-    updateAppointmentStatus,
-    getPatientAppointments,
-    getDoctorAppointments,
-    getDoctorPatients
-} = require("../controllers/appointmentController");
+const { addAppointment, getAppointments, updateAppointmentStatus, getPatientAppointments, getDoctorAppointments, getDoctorPatients } = require("../controllers/appointmentController");
 const { authMiddleware, roleMiddleware } = require("../middleware/authMiddleware");
 
 router.post("/", authMiddleware, roleMiddleware(["admin", "receptionist", "patient"]), addAppointment);

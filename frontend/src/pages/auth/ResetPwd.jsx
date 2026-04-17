@@ -21,7 +21,7 @@ const ResetPwd = () => {
     setData({ ...data, [name]: value });
   };
 
-  // ================= SEND OTP =================
+  // SEND OTP 
   const sendOTP = async () => {
 
     if (!data.email) {
@@ -47,7 +47,7 @@ const ResetPwd = () => {
   };
 
 
-  // ================= VERIFY OTP =================
+  //  VERIFY OTP 
   const verifyOTP = async () => {
 
     if (!data.otp) {
@@ -74,7 +74,7 @@ const ResetPwd = () => {
   };
 
 
-  // ================= RESET PASSWORD =================
+  //  RESET PASSWORD 
   const resetPassword = async () => {
 
     if (!data.password) {
@@ -115,7 +115,6 @@ const ResetPwd = () => {
 
       <div className="reset-container">
 
-        {/* LEFT SIDE */}
         <div className="reset-left">
           <div className="left-content">
             <h2>Reset Password</h2>
@@ -123,14 +122,12 @@ const ResetPwd = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="reset-right">
 
           <h2>Forgot Password</h2>
 
           {msg && <p>{msg}</p>}
 
-          {/* EMAIL */}
           <input
             name="email"
             placeholder="Enter Email"
@@ -139,7 +136,6 @@ const ResetPwd = () => {
             disabled={otpSent}
           />
 
-          {/* OTP */}
           {otpSent && (
             <input
               name="otp"
@@ -149,7 +145,7 @@ const ResetPwd = () => {
             />
           )}
 
-          {/* PASSWORD */}
+
           {otpVerified && (
             <input
               name="password"
@@ -160,7 +156,7 @@ const ResetPwd = () => {
             />
           )}
 
-          {/* BUTTONS */}
+
           {!otpSent && (
             <button onClick={sendOTP} disabled={loading}>
               {loading ? "Sending..." : "Send OTP"}
