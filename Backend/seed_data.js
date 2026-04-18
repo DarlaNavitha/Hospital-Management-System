@@ -9,7 +9,7 @@ const seedData = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to DB...");
 
-        const password = await bcrypt.hash("password123", 10);
+        const password = await bcrypt.hash("medicare123", 10);
 
         const users = [
             { name: "Admin User", email: "admin@hospital.com", password, role: "admin" },
