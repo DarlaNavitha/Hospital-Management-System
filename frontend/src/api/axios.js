@@ -6,7 +6,7 @@ const API = axios.create({
 });
 
 //  REQUEST INTERCEPTOR
-API.interceptors.request.use((req,res) => {
+API.interceptors.request.use((req) => {
         const token = Cookies.get("logininfo"); //store ONLY token
 
         if (token) {

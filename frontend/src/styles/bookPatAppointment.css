@@ -1,0 +1,87 @@
+/* Page Layout */
+.page-container {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+}
+
+/* Title */
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Grid Layout */
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Card Style (Glass effect like your UI) */
+.doctor-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.doctor-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Doctor Name */
+.doctor-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+/* Info text */
+.doctor-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #cbd5f5;
+}
+
+/* Book Button */
+.book-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.book-btn:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  transform: scale(1.05);
+}
+
+/* Disabled button */
+.book-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading / empty text */
+.page-container p {
+  text-align: center;
+  font-size: 16px;
+  color: #94a3b8;
+}

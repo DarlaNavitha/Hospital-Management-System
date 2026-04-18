@@ -2,10 +2,54 @@ const am = require("../models/appointmentmodels");
 
 const addAppointment = async (req, res) => {
     try {
-        const appointment = new am(req.body);
+
+        console.log("USER:", req.user);
+        const { doctorId, date, time, patientId } = req.body;
+
+        const user = req.user; // from auth middleware
+
+        let finalPatientId;
+
+        // ROLE-BASED LOGIC
+        if (user.role === "patient") {
+            // patient books for themselves
+            finalPatientId = user.id;
+        } 
+        else if (user.role === "receptionist") {
+            // receptionist books for patient
+            if (!patientId) {
+                return res.status(400).json({ msg: "Patient ID required" });
+            }
+            finalPatientId = patientId;
+        } 
+        else {
+            return res.status(403).json({ msg: "Access denied" });
+        }
+
+        // VALIDATION
+        if (!doctorId || !date || !time) {
+            return res.status(400).json({ msg: "All fields required" });
+        }
+
+        // CREATE APPOINTMENT
+        const appointment = new am({
+            patientId: finalPatientId,
+            doctorId,
+            date,
+            time
+        });
+
         await appointment.save();
-        res.status(201).json({ msg: "Appointment booked", appointment });
+
+        console.log("✅ Appointment created:", appointment);
+
+        res.status(201).json({
+            msg: "Appointment booked",
+            appointment
+        });
+
     } catch (err) {
+        console.error("❌ Appointment error:", err);
         res.status(500).json({ msg: "Server Error" });
     }
 };

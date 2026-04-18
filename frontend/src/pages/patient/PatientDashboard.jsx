@@ -68,6 +68,14 @@ const PatientDashboard = () => {
                     </Link>
                 </div>
 
+                <div className="card">
+                    <h3>Book Appointment</h3>
+                    <p>Schedule your visit with doctors</p>
+                    <button onClick={() => navigate("/book-appointment")}>
+                        Book Now
+                    </button>
+                </div>
+
             </div>
 
             <div className="glass-card tip-card">
