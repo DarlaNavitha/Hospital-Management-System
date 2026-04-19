@@ -29,6 +29,9 @@ const addAppointment = async (req, res) => {
             return res.status(403).json({ msg: "Access denied" });
         }
 
+        const doctor = await dm.findById(doctorId);
+
+
         // ONLY required fields
         if (!doctorId || !date || !time) {
             return res.status(400).json({ msg: "doctorId, date, time required" });

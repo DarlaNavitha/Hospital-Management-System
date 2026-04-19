@@ -61,8 +61,9 @@ const PatientBookAppointment = () => {
             });
 
         } catch (err) {
-            console.error(err);
-            alert("Failed ❌");
+            console.error("ERROR:", err.response?.data || err.message);
+
+            alert(err.response?.data?.msg || "Failed ❌");
         }
     };
 
