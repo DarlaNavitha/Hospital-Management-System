@@ -248,17 +248,47 @@ const resetPassword = async (req, res) => {
 
 const sendDoctorWelcomeMail = async (email, name) => {
     try {
-        console.log("🔥 Doctor block entered");
+        console.log("📨 Sending mail to:", email);
+
+        const loginUrl = "https://hospital-management-system-dxf5.onrender.com/login"; // your frontend URL
+        const defaultPassword = "medicare123";
+
         await transporter.sendMail({
             from: '"MediCare Hospital Admin" <darlanavitha23@gmail.com>',
             to: email,
             subject: "Welcome to MediCare Hospital Portal",
             html: `
-                <h2>Hello Dr. ${name},</h2>
-                <p>You have been added to the <b>MediCare Hospital Management System</b>.</p>
-                <p>Please use <b>Forgot Password</b> to set your password.</p>
-                <br/>
-                <p>Best Regards,<br/>MediCare Hospital Team</p>
+                <div style="font-family: Arial, sans-serif; padding: 20px;">
+                    
+                    <h2 style="color:#0ea5e9;">Welcome Dr. ${name} 👨‍⚕️</h2>
+                    
+                    <p>You have been successfully added to the 
+                    <b style="color:blue;">MediCare Hospital Management System</b>.</p>
+
+                    <hr/>
+
+                    <h3>🔐 Login Details:</h3>
+                    <p><b>Email:</b> ${email}</p>
+                    <p><b>Temporary Password:</b> ${defaultPassword}</p>
+
+                    <br/>
+
+                    <a href="${loginUrl}" 
+                       style="display:inline-block;padding:10px 20px;
+                       background:#0ea5e9;color:white;text-decoration:none;
+                       border-radius:5px;">
+                       Login Now
+                    </a>
+
+                    <br/><br/>
+
+                    <p>👉 After login, please reset your password using <b>Forgot Password</b>.</p>
+
+                    <hr/>
+
+                    <p style="color:gray;">Best Regards,<br/>MediCare Hospital Team</p>
+
+                </div>
             `
         });
 
