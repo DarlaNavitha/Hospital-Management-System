@@ -36,7 +36,7 @@ const addAppointment = async (req, res) => {
 
         const appointment = new am({
             patientId: finalPatientId,
-            doctorId,
+            doctorId: doctor._id,
             date,
             time,
             patientName: patientName || "",
