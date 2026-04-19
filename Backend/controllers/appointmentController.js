@@ -108,6 +108,7 @@ const getPatientAppointments = async (req, res) => {
 
 const getDoctorAppointments = async (req, res) => {
     try {
+        console.log("FULL USER:", req.user);
         const dm = require("../models/doctormodels");
         const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
@@ -129,6 +130,7 @@ const getDoctorAppointments = async (req, res) => {
 
 const getDoctorPatients = async (req, res) => {
     try {
+        console.log("FULL USER:", req.user);
         const dm = require("../models/doctormodels");
         const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
@@ -152,6 +154,7 @@ const getDoctorPatients = async (req, res) => {
 
 const getDoctorRequests = async (req, res) => {
     try {
+        console.log("FULL USER:", req.user);
         const dm = require("../models/doctormodels");
 
         const doctor = await dm.findOne({ userId: req.user.id });

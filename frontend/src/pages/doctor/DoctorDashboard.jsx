@@ -13,11 +13,15 @@ const DoctorDashboard = () => {
             try {
                 const appRes = await API.get("/appointments/doctor/current");
                 setAppointments(appRes.data);
+            } catch (err) {
+                console.error("Appointments error:", err);
+            }
 
+            try {
                 const docRes = await API.get("/doctors/profile/me");
                 setDoctorProfile(docRes.data);
             } catch (err) {
-                console.error(err);
+                console.error("Doctor profile error:", err);
             }
         };
         fetchProfileData();

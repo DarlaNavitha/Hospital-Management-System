@@ -92,6 +92,7 @@ const deleteDoctor = async (req, res) => {
 
 const getMyProfile = async (req, res) => {
     try {
+        console.log("FULL USER:", req.user);
         const doctor = await dm.findOne({ userId: req.user.id }).populate("userId", "name email");
         if (!doctor) return res.status(404).json({ msg: "Doctor profile not found" });
         res.json(doctor);
