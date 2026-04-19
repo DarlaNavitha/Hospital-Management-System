@@ -48,7 +48,7 @@ const AllDoctors = () => {
 
                                     <td>{doc.specialization}</td>
                                     <td>{doc.experience} Years</td>
-                                    <td>${doc.consultationFee}</td>
+                                    <td>₹{doc.consultationFee}</td>
                                 </tr>
                             ))}
                         </tbody>
