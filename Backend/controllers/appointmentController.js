@@ -169,12 +169,18 @@ const getDoctorRequests = async (req, res) => {
 
         if (!doctor) return res.json([]);
 
+        //////////////////////
+
         const requests = await am.find({
             doctorId: doctor._id,
             status: "pending"
         })
-        .populate("patientId", "name age gender phone address bloodGroup");
-        console.log(requests);
+        .populate({
+            path: "patientId",
+            model: "patient"   // 🔥 ADD THIS LINE
+        });
+        
+        console.log("FULL REQUEST:", JSON.stringify(requests, null, 2));
 
         res.json(requests);
 

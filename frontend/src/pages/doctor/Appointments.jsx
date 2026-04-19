@@ -91,7 +91,11 @@ const Appointments = () => {
                         </div>
 
                         <p className="doctor-request-time">
-                            Requested: <strong>{app.date}</strong> at <strong>{app.time}</strong>
+                            Requested: <strong>{new Date(app.date).toLocaleDateString("en-IN", {
+                                            day: "numeric",
+                                            month: "short",
+                                            year: "numeric"
+                                        })}</strong> at <strong>{app.time}</strong>
                         </p>
 
                         <div className="doctor-patient-grid">
