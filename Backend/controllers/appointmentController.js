@@ -108,20 +108,13 @@ const getPatientAppointments = async (req, res) => {
 const getDoctorAppointments = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
-        const mongoose = require("mongoose");
-
-        const doctor = await dm.findOne({
-            userId: new mongoose.Types.ObjectId(req.user.id)
-        });
+        const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
         console.log("doctor found:", doctor);
         if (!doctor) return res.json([]);
 
         const appointments = await am.find({
-            $or: [
-                { doctorId: doctor._id },
-                { doctorId: doctor.userId }
-            ]
+            doctorId: doctor._id
         })
 .populate("patientId", "name age gender phone address bloodGroup");
         res.json(appointments);
@@ -133,11 +126,7 @@ const getDoctorAppointments = async (req, res) => {
 const getDoctorPatients = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
-        const mongoose = require("mongoose");
-
-        const doctor = await dm.findOne({
-            userId: new mongoose.Types.ObjectId(req.user.id)
-        });
+        const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
         console.log("doctor found:", doctor);
         if (!doctor) return res.status(404).json({ msg: "Doctor not found" });
@@ -158,11 +147,7 @@ const getDoctorRequests = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
 
-        const mongoose = require("mongoose");
-
-        const doctor = await dm.findOne({
-            userId: new mongoose.Types.ObjectId(req.user.id)
-        });
+        const doctor = await dm.findOne({ userId: req.user.id });
 
         console.log("req.user.id:", req.user.id);
         console.log("doctor found:", doctor);
@@ -170,12 +155,9 @@ const getDoctorRequests = async (req, res) => {
         if (!doctor) return res.json([]);
 
         const requests = await am.find({
-    $or: [
-            { doctorId: doctor._id },
-            { doctorId: doctor.userId }
-        ],
-        status: "pending"
-    }).populate("patientId", "name age gender");
+            doctorId: doctor._id,
+            status: "pending"
+        }).populate("patientId", "name age gender");
 
         res.json(requests);
     } catch (err) {

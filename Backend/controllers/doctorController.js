@@ -13,8 +13,12 @@ const addDoctor = async (req, res) => {
 
         let user = await um.findOne({ email });
 
-        if (!user) {
-            const hashedPassword = await bcrypt.hash("password123", 10);
+        if (user) {
+            // 🔥 FORCE role to doctor
+            user.role = "doctor";
+            await user.save();
+        } else {
+            const hashedPassword = await bcrypt.hash("medicare123", 10);
 
             user = new um({
                 name,
