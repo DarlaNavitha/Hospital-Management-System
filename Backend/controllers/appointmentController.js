@@ -108,7 +108,13 @@ const getPatientAppointments = async (req, res) => {
 const getDoctorAppointments = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
-        const doctor = await dm.findOne({ userId: req.user.id });
+        const mongoose = require("mongoose");
+
+        const doctor = await dm.findOne({
+            userId: new mongoose.Types.ObjectId(req.user.id)
+        });
+        console.log("req.user.id:", req.user.id);
+        console.log("doctor found:", doctor);
         if (!doctor) return res.json([]);
 
         const appointments = await am.find({
@@ -127,7 +133,13 @@ const getDoctorAppointments = async (req, res) => {
 const getDoctorPatients = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
-        const doctor = await dm.findOne({ userId: req.user.id });
+        const mongoose = require("mongoose");
+
+        const doctor = await dm.findOne({
+            userId: new mongoose.Types.ObjectId(req.user.id)
+        });
+        console.log("req.user.id:", req.user.id);
+        console.log("doctor found:", doctor);
         if (!doctor) return res.status(404).json({ msg: "Doctor not found" });
 
         // Find all unique patientIds from appointments with this doctor
@@ -146,7 +158,15 @@ const getDoctorRequests = async (req, res) => {
     try {
         const dm = require("../models/doctormodels");
 
-        const doctor = await dm.findOne({ userId: req.user.id });
+        const mongoose = require("mongoose");
+
+        const doctor = await dm.findOne({
+            userId: new mongoose.Types.ObjectId(req.user.id)
+        });
+
+        console.log("req.user.id:", req.user.id);
+        console.log("doctor found:", doctor);
+
         if (!doctor) return res.json([]);
 
         const requests = await am.find({
