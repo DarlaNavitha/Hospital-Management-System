@@ -30,7 +30,9 @@ const addAppointment = async (req, res) => {
             return res.status(403).json({ msg: "Access denied" });
         }
 
-        const doctor = await dm.findById(doctorId);
+        if (!doctor) {
+            return res.status(404).json({ msg: "Doctor not found" });
+        }
 
 
         // ONLY required fields
@@ -107,8 +109,13 @@ const getDoctorAppointments = async (req, res) => {
         const doctor = await dm.findOne({ userId: req.user.id });
         if (!doctor) return res.json([]);
 
-        const appointments = await am.find({ doctorId: doctor._id })
-            .populate("patientId", "name age gender phone address bloodGroup");
+        const appointments = await am.find({
+            $or: [
+                { doctorId: doctor._id },
+                { doctorId: doctor.userId }
+            ]
+        })
+.populate("patientId", "name age gender phone address bloodGroup");
         res.json(appointments);
     } catch (err) {
         res.status(500).json({ msg: "Server Error" });
@@ -141,9 +148,12 @@ const getDoctorRequests = async (req, res) => {
         if (!doctor) return res.json([]);
 
         const requests = await am.find({
-            doctorId: doctor._id,
-            status: "pending"   // ONLY pending
-        }).populate("patientId", "name age gender");
+    $or: [
+            { doctorId: doctor._id },
+            { doctorId: doctor.userId }
+        ],
+        status: "pending"
+    }).populate("patientId", "name age gender");
 
         res.json(requests);
     } catch (err) {
