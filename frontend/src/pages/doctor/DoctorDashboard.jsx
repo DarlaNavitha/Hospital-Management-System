@@ -111,7 +111,11 @@ const DoctorDashboard = () => {
                                 </div>
 
                                 <p className="time">
-                                    📅 {app.date} at {app.time}
+                                    📅 {new Date(app.date).toLocaleDateString("en-IN", {
+                                            day: "numeric",
+                                            month: "short",
+                                            year: "numeric"
+                                        })} at {app.time}
                                 </p>
                             </div>
 
