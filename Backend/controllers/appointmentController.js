@@ -108,22 +108,28 @@ const getPatientAppointments = async (req, res) => {
 
 const getDoctorAppointments = async (req, res) => {
     try {
-        console.log("FULL USER:", req.user);
+        const mongoose = require("mongoose");
         const dm = require("../models/doctormodels");
-        const doctor = await dm.findOne({ userId: req.user.id });
-        console.log("req.user.id:", req.user.id);
-        console.log("doctor found:", doctor);
+
+        const doctor = await dm.findOne({
+            userId: new mongoose.Types.ObjectId(req.user.id)
+        });
+
         if (!doctor) {
-            console.log("❌ Doctor not found");
-            return res.status(404).json({ msg: "Doctor not found" });
+            console.log("❌ Doctor not found for user:", req.user.id);
+            return res.json([]);
         }
 
         const appointments = await am.find({
             doctorId: doctor._id
-        })
-.populate("patientId", "name age gender phone address bloodGroup");
+        }).populate("patientId", "name age gender phone address bloodGroup");
+
+        console.log("✅ Appointments found:", appointments.length);
+
         res.json(appointments);
+
     } catch (err) {
+        console.error("❌ getDoctorAppointments ERROR:", err);
         res.status(500).json({ msg: "Server Error" });
     }
 };
@@ -154,24 +160,24 @@ const getDoctorPatients = async (req, res) => {
 
 const getDoctorRequests = async (req, res) => {
     try {
-        console.log("FULL USER:", req.user);
+        const mongoose = require("mongoose");
         const dm = require("../models/doctormodels");
 
-        const doctor = await dm.findOne({ userId: req.user.id });
+        const doctor = await dm.findOne({
+            userId: new mongoose.Types.ObjectId(req.user.id)
+        });
 
-        console.log("Logged user:", req.user.id);
-        console.log("Doctor:", doctor);
-        console.log("Doctor ID:", doctor?._id);
+        if (!doctor) return res.json([]);
 
         const requests = await am.find({
-            doctorId: doctor?._id,
+            doctorId: doctor._id,
             status: "pending"
-        }).populate("patientId", "name age gender phone address bloodGroup");
-
-        console.log("Appointments found:", requests.length);
+        }).populate("patientId", "name age gender");
 
         res.json(requests);
+
     } catch (err) {
+        console.error(err);
         res.status(500).json({ msg: "Server Error" });
     }
 };
