@@ -12,7 +12,7 @@ const Appointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await API.get("/appointments/doctor/requests");
+                const res = await API.get("/appointments/doctor/current");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);
@@ -64,7 +64,7 @@ const Appointments = () => {
         <div className="doctor-appointments-page">
 
     <div className="doctor-page-header">
-        <h1>Patient Appointment Requests</h1>
+        <h1>All Appointment</h1>
         <button className="doctor-back-btn" onClick={() => navigate("/doctor")}>
             ← Back
         </button>
