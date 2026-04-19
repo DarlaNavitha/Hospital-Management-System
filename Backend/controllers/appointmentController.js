@@ -30,6 +30,8 @@ const addAppointment = async (req, res) => {
             return res.status(403).json({ msg: "Access denied" });
         }
 
+        const doctor = await dm.findById(doctorId);
+
         if (!doctor) {
             return res.status(404).json({ msg: "Doctor not found" });
         }
