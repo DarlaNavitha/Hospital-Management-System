@@ -1,4 +1,5 @@
 const am = require("../models/appointmentmodels");
+const dm = require("../models/doctormodels");
 
 const addAppointment = async (req, res) => {
     try {
