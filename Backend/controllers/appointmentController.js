@@ -2,21 +2,24 @@ const am = require("../models/appointmentmodels");
 
 const addAppointment = async (req, res) => {
     try {
+        const { doctorId, date, time, patientName, age, gender, disease, patientId } = req.body;
 
-        console.log("USER:", req.user);
-        const { doctorId, date, time, patientId } = req.body;
-
-        const user = req.user; // from auth middleware
+        const user = req.user;
 
         let finalPatientId;
 
-        // ROLE-BASED LOGIC
+        // Always use patient._id
         if (user.role === "patient") {
-            // patient books for themselves
-            finalPatientId = user.id;
+            const pm = require("../models/patientmodels");
+            const patient = await pm.findOne({ userId: user.id });
+
+            if (!patient) {
+                return res.status(404).json({ msg: "Patient profile not found" });
+            }
+
+            finalPatientId = patient._id;
         } 
         else if (user.role === "receptionist") {
-            // receptionist books for patient
             if (!patientId) {
                 return res.status(400).json({ msg: "Patient ID required" });
             }
@@ -26,30 +29,32 @@ const addAppointment = async (req, res) => {
             return res.status(403).json({ msg: "Access denied" });
         }
 
-        // VALIDATION
+        // ONLY required fields
         if (!doctorId || !date || !time) {
-            return res.status(400).json({ msg: "All fields required" });
+            return res.status(400).json({ msg: "doctorId, date, time required" });
         }
 
-        // CREATE APPOINTMENT
         const appointment = new am({
             patientId: finalPatientId,
             doctorId,
             date,
-            time
+            time,
+            patientName: patientName || "",
+            age: age || null,
+            gender: gender || "",
+            disease: disease || "",
+            status: "pending"
         });
 
         await appointment.save();
 
-        console.log("✅ Appointment created:", appointment);
-
         res.status(201).json({
-            msg: "Appointment booked",
+            msg: "Appointment request sent",
             appointment
         });
 
     } catch (err) {
-        console.error("❌ Appointment error:", err);
+        console.error(err);
         res.status(500).json({ msg: "Server Error" });
     }
 };
@@ -124,4 +129,22 @@ const getDoctorPatients = async (req, res) => {
     }
 };
 
-module.exports = { addAppointment, getAppointments, updateAppointmentStatus, getPatientAppointments, getDoctorAppointments, getDoctorPatients };
+const getDoctorRequests = async (req, res) => {
+    try {
+        const dm = require("../models/doctormodels");
+
+        const doctor = await dm.findOne({ userId: req.user.id });
+        if (!doctor) return res.json([]);
+
+        const requests = await am.find({
+            doctorId: doctor._id,
+            status: "pending"   // ONLY pending
+        }).populate("patientId", "name age gender");
+
+        res.json(requests);
+    } catch (err) {
+        res.status(500).json({ msg: "Server Error" });
+    }
+};
+
+module.exports = { addAppointment, getAppointments, updateAppointmentStatus, getPatientAppointments, getDoctorAppointments, getDoctorPatients, getDoctorRequests };

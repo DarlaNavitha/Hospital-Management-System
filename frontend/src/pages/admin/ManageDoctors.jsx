@@ -40,9 +40,29 @@ const ManageDoctors = () => {
 
     const handleAdd = async () => {
         try {
-            await API.post("/doctors", newData);
 
-            alert("Doctor added successfully");
+            if (
+                !newData.name ||
+                !newData.email ||
+                !newData.specialization ||
+                !newData.experience ||
+                !newData.consultationFee
+            ) {
+                alert("Please fill all fields ❌");
+                return;
+            }
+            console.log("🔥 CALLING REGISTER API");
+            await API.post("/auth/register", {
+                name: newData.name,
+                email: newData.email,
+                password: "medicare123",
+                role: "doctor",
+                specialization: newData.specialization,
+                experience: newData.experience,
+                consultationFee: newData.consultationFee
+            });
+
+            alert("Doctor added successfully ✅\nEmail sent to doctor 📧");
 
             setNewData({
                 name: "",
@@ -58,6 +78,7 @@ const ManageDoctors = () => {
         } catch (err) {
             alert(err.response?.data?.msg || "Error adding doctor");
         }
+        
     };
 
     // DELETE 

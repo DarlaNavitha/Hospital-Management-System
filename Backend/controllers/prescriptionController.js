@@ -12,10 +12,11 @@ const addPrescription = async (req, res) => {
             if (user && user.role === 'doctor') {
                 doctor = new dm({
                     userId: user._id,
-                    specialization: "General Practice",
-                    experience: 0,
+                    name: newData.name,
+                    specialization: newData.specialization,
+                    experience: newData.experience,
                     availableDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    consultationFee: 50
+                    consultationFee: newData.consultationFee
                 });
                 await doctor.save();
                 console.log("Auto-recovered missing doctor profile for:", user.email);

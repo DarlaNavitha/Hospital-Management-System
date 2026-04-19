@@ -195,3 +195,80 @@
     padding: 20px;
     color: #94a3b8;
 }
+
+/* ================= FIX: MAKE dashboard-card SAME AS glass-card dash-card ================= */
+
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 20px; /* same as glass-card */
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.3s;
+}
+
+/* SAME hover as other cards */
+.dashboard-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(255,255,255,0.1); /* remove blue border */
+    box-shadow: none; /* remove glow */
+}
+
+/* MATCH icon size */
+.card-icon {
+    font-size: 2.5rem; /* SAME as .icon */
+    margin-bottom: 10px;
+}
+/* Match heading exactly like other cards */
+.dashboard-card h2 {
+    font-size: 1.2rem;              
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 6px;
+}
+
+/* Match description text */
+.dashboard-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.card-btn {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+
+    padding: 6px 14px;
+    border-radius: 6px;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Same hover feel */
+.card-btn:hover {
+    background: rgba(56,189,248,0.1);
+    color: #38bdf8;
+}
+
+/* Fix vertical alignment */
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

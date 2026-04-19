@@ -6,7 +6,7 @@ let appointmentsch = new mongoose.Schema({
     "time": { type: String, required: true },
     "attendingTime": { type: String },
     "notes": { type: String },
-    "status": { type: String, enum: ['pending', 'confirmed', 'completed', 'cancelled'], default: 'pending' },
+    "status": { type: String, enum: ['pending', 'confirmed', 'completed', 'rejected'], default: 'pending' },
     "createdAt": { type: Date, default: Date.now }
 })
 let am = mongoose.model("appointment", appointmentsch)

@@ -3,7 +3,7 @@ import API from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
 import "../../styles/bookAppointment.css"; 
 
-const BookAppointment = () => {
+const RecepBookAppointment = () => {
     const navigate = useNavigate();
     const [doctors, setDoctors] = useState([]);
     const [patients, setPatients] = useState([]);
@@ -152,4 +152,4 @@ const BookAppointment = () => {
     );
 };
 
-export default BookAppointment;
+export default RecepBookAppointment;

@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from "react";
-import API from "../../api/axios"; 
+import API from "../../api/axios";
 import "../../styles/bookPatAppointment.css";
 
-const BookAppointment = () => {
+const PatientBookAppointment = () => {
 
     const [doctors, setDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [bookingId, setBookingId] = useState(null);
+
+    const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+    const [formData, setFormData] = useState({
+        patientName: "",
+        age: "",
+        gender: "",
+        disease: "",
+        date: "",
+        time: ""
+    });
 
     // Fetch doctors
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
                 const res = await API.get("/doctors");
+                console.log("Doctors API response:", res.data);
                 setDoctors(res.data);
             } catch (err) {
                 console.error("Error fetching doctors:", err);
@@ -24,24 +35,34 @@ const BookAppointment = () => {
         fetchDoctors();
     }, []);
 
-    // Handle booking
-    const handleBook = async (doctorId) => {
+    // Submit appointment request
+    const handleSubmit = async () => {
         try {
-            setBookingId(doctorId);
+            if (!formData.patientName || !formData.date || !formData.time) {
+                return alert("Please fill required fields");
+            }
 
-            const res = await API.post("/appointments", {
-                doctorId,
-                date: new Date(), // later we can add date picker
-                time: "10:00 AM"
+            await API.post("/appointments", {
+                doctorId: selectedDoctor._id,
+                ...formData
             });
 
-            alert("✅ Appointment booked successfully!");
+            alert("Request Sent ✅");
+
+            // Reset
+            setSelectedDoctor(null);
+            setFormData({
+                patientName: "",
+                age: "",
+                gender: "",
+                disease: "",
+                date: "",
+                time: ""
+            });
 
         } catch (err) {
-            console.error("Booking error:", err);
-            alert("❌ Failed to book appointment");
-        } finally {
-            setBookingId(null);
+            console.error(err);
+            alert("Failed ❌");
         }
     };
 
@@ -60,17 +81,17 @@ const BookAppointment = () => {
                     {doctors.map((doc) => (
                         <div className="doctor-card" key={doc._id}>
 
-                            <h2>{doc.name || "Doctor"}</h2>
+                            <h2>{doc.userId?.name || "Doctor"}</h2>
+                            <p><strong>Name:</strong> {doc.userId?.name}</p>
                             <p><strong>Specialization:</strong> {doc.specialization}</p>
                             <p><strong>Experience:</strong> {doc.experience} yrs</p>
                             <p><strong>Fee:</strong> ₹{doc.consultationFee}</p>
 
                             <button
-                                className="book-btn"
-                                onClick={() => handleBook(doc._id)}
-                                disabled={bookingId === doc._id}
+                                className="view-btn"
+                                onClick={() => setSelectedDoctor(doc)}
                             >
-                                {bookingId === doc._id ? "Booking..." : "Book Appointment"}
+                                Book Appointment
                             </button>
 
                         </div>
@@ -78,8 +99,69 @@ const BookAppointment = () => {
 
                 </div>
             )}
+
+            {/* Appointment Form */}
+            {selectedDoctor && (
+                <div className="appointment-form">
+
+                    <h2>Book with {selectedDoctor.userId?.name}</h2>
+
+                    <input
+                        placeholder="Your Name"
+                        value={formData.patientName}
+                        onChange={(e) => setFormData({ ...formData, patientName: e.target.value })}
+                    />
+
+                    <input
+                        placeholder="Age"
+                        value={formData.age}
+                        onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+                    />
+
+                    <select
+                        className="form-input"
+                        value={formData.gender}
+                        onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
+                        >
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <input
+                        placeholder="Describe Disease"
+                        value={formData.disease}
+                        onChange={(e) => setFormData({ ...formData, disease: e.target.value })}
+                    />
+
+                    <input
+                        type="date"
+                        value={formData.date}
+                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                    />
+
+                    <input
+                        type="time"
+                        value={formData.time}
+                        onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                    />
+
+                    <button onClick={handleSubmit} className="view-btn">
+                        Request Appointment
+                    </button>
+
+                    <button className="view-btn"
+                        onClick={() => setSelectedDoctor(null)}
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+            )}
+
         </div>
     );
 };
 
-export default BookAppointment;
+export default PatientBookAppointment;

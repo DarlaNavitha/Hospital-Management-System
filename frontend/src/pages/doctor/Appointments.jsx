@@ -12,7 +12,7 @@ const Appointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const res = await API.get("/appointments/doctor/current");
+                const res = await API.get("/appointments/doctor/requests");
                 setAppointments(res.data);
             } catch (err) {
                 console.error(err);
@@ -59,6 +59,7 @@ const Appointments = () => {
         }
     };
 
+ 
     return (
         <div className="doctor-appointments-page">
 
@@ -159,22 +160,13 @@ const Appointments = () => {
                         <label>Set Attending Time</label>
 
                         <div className="doctor-action-row">
-                            <input
-                                type="time"
-                                onChange={(e) => handleTimeChange(app._id, e.target.value)}
-                            />
+                            <input type="time" onChange={(e) => handleTimeChange(app._id, e.target.value)}/>
 
-                            <button
-                                className="doctor-confirm-btn"
-                                onClick={() => updateStatus(app._id, 'confirmed')}
-                            >
+                            <button className="doctor-confirm-btn" onClick={() => updateStatus(app._id, 'confirmed')}>
                                 Confirm
                             </button>
 
-                            <button
-                                className="doctor-reject-btn"
-                                onClick={() => updateStatus(app._id, 'cancelled')}
-                            >
+                            <button className="doctor-reject-btn" onClick={() => updateStatus(app._id, 'rejected')}>
                                 Reject
                             </button>
                         </div>

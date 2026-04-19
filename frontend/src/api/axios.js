@@ -7,7 +7,18 @@ const API = axios.create({
 
 //  REQUEST INTERCEPTOR
 API.interceptors.request.use((req) => {
-        const token = Cookies.get("logininfo"); //store ONLY token
+        const cookie = Cookies.get("logininfo");
+
+            let token = null;
+
+            if (cookie) {
+                try {
+                    const parsed = JSON.parse(cookie);
+                    token = parsed.token; // extract real token
+                } catch (err) {
+                    console.log("Invalid cookie");
+                }
+            }
 
         if (token) {
             req.headers.Authorization = `Bearer ${token}`;

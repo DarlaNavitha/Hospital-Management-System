@@ -16,13 +16,30 @@ const Login = () => {
 
     // RESET STATE
     useEffect(() => {
-        setData({ email: "", password: "" });
+    setData({ email: "", password: "" });
 
-        const cookieExists = document.cookie.includes("logininfo");
-        if (cookieExists) {
-            navigate("/");
+    const cookie = Cookies.get("logininfo");
+
+    if (cookie) {
+        try {
+            const parsed = JSON.parse(cookie);
+
+            if (parsed?.token && parsed?.user) {
+                obj.updstate({
+                    ...parsed.user,
+                    token: parsed.token
+                });
+
+                navigate("/");
+            } else {
+                Cookies.remove("logininfo");
+            }
+
+        } catch (err) {
+            Cookies.remove("logininfo"); // remove broken cookie
         }
-    }, []);
+    }
+}, []);
 
     let fun = (e) => {
         let { name, value } = e.target;
@@ -41,7 +58,11 @@ const Login = () => {
             let res = await API.post("/auth/login", trimmedData);
 
             if (res.data.token) {
-                Cookies.set("logininfo", res.data.token, { expires: 1 });
+                Cookies.set(
+                        "logininfo",
+                        JSON.stringify(res.data),
+                        { expires: 1 }
+                    );
 
                 obj.updstate({
                     ...res.data.user,

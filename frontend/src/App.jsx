@@ -13,10 +13,9 @@ import Nav from "./components/layout/Nav.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Ct, { CtProvider } from "./context/Ct.jsx";
 
-
 import ReceptionDashboard from "./pages/receptionist/ReceptionDashboard.jsx";
 import RegisterPatient from "./pages/receptionist/Registerpatient.jsx";
-import BookAppointment from "./pages/receptionist/BookAppointment.jsx";
+import RecepBookAppointment from "./pages/receptionist/BookAppointment.jsx";
 import MyAppointments from "./pages/patient/MyAppointments.jsx";
 import Prescriptions from "./pages/patient/Prescriptions.jsx";
 import Appointments from "./pages/doctor/Appointments.jsx";
@@ -27,6 +26,7 @@ import MyPatients from "./pages/doctor/MyPatients.jsx";
 import AllPatients from "./pages/receptionist/AllPatients.jsx";
 import ReceptionistAppointments from "./pages/receptionist/ReceptionistAppointments.jsx";
 import ReceptionistPrescriptions from "./pages/receptionist/ReceptionistPrescriptions.jsx";
+import PatientBookAppointment from "./pages/patient/BookAppointment";
 
 import "./App.css";
 
@@ -50,10 +50,24 @@ const AppContent = () => {
 
     useEffect(() => {
         const loginInfo = Cookies.get("logininfo");
+
         if (loginInfo) {
             try {
-                const data = JSON.parse(loginInfo);
-                obj.updstate({...data.user, token: data.token});
+                // 🔥 FIX: handle both JSON and plain token safely
+                let data;
+
+                try {
+                    data = JSON.parse(loginInfo);
+                } catch {
+                    // fallback if only token stored
+                    data = { token: loginInfo, user: {} };
+                }
+
+                obj.updstate({
+                    ...data.user,
+                    token: data.token
+                });
+
             } catch (e) {
                 console.error("Failed to parse login info", e);
             }
@@ -70,31 +84,28 @@ const AppContent = () => {
                         <Route path="/Login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/resetpwd" element={<ResetPwd />} />
-                    
-                    {/* Admin */}
-                        
+
+                        {/* Admin */}
                         <Route path="/admin" element={<ProtectedRoute roles={['admin']}><AdminDashboard /></ProtectedRoute>} />
                         <Route path="/admin/manage-doctors" element={<ProtectedRoute roles={['admin']}><ManageDoctors /></ProtectedRoute>} />
-                    
-                    {/* Doctor */}
-                       
+
+                        {/* Doctor */}
                         <Route path="/doctor" element={<ProtectedRoute roles={['doctor']}><DoctorDashboard /></ProtectedRoute>} />
                         <Route path="/doctor/appointments" element={<ProtectedRoute roles={['doctor']}><Appointments /></ProtectedRoute>} />
                         <Route path="/doctor/write-prescription" element={<ProtectedRoute roles={['doctor']}><WritePrescription /></ProtectedRoute>} />
                         <Route path="/doctor/my-patients" element={<ProtectedRoute roles={['doctor']}><MyPatients /></ProtectedRoute>} />
                         <Route path="/doctor/all-doctors" element={<ProtectedRoute roles={['doctor']}><AllDoctors /></ProtectedRoute>} />
-                    
-                    {/* Patient */}
-                        
+
+                        {/* Patient */}
                         <Route path="/patient" element={<ProtectedRoute roles={['patient']}><PatientDashboard /></ProtectedRoute>} />
                         <Route path="/patient/my-appointments" element={<ProtectedRoute roles={['patient']}><MyAppointments /></ProtectedRoute>} />
                         <Route path="/patient/prescriptions" element={<ProtectedRoute roles={['patient']}><Prescriptions /></ProtectedRoute>} />
+                        <Route path="/patient/book-appointment" element={<ProtectedRoute roles={['patient']}><PatientBookAppointment /></ProtectedRoute>} />
 
-                    {/* Receptionist */}
-                    
+                        {/* Receptionist */}
                         <Route path="/receptionist" element={<ProtectedRoute roles={['receptionist']}><ReceptionDashboard /></ProtectedRoute>} />
                         <Route path="/receptionist/register-patient" element={<ProtectedRoute roles={['receptionist']}><RegisterPatient /></ProtectedRoute>} />
-                        <Route path="/receptionist/book-appointment" element={<ProtectedRoute roles={['receptionist']}><BookAppointment /></ProtectedRoute>} />
+                        <Route path="/receptionist/book-appointment" element={<ProtectedRoute roles={['receptionist']}><RecepBookAppointment /></ProtectedRoute>} />
                         <Route path="/receptionist/all-patients" element={<ProtectedRoute roles={['receptionist']}><AllPatients /></ProtectedRoute>} />
                         <Route path="/receptionist/appointments" element={<ProtectedRoute roles={['receptionist']}><ReceptionistAppointments /></ProtectedRoute>} />
                         <Route path="/receptionist/prescriptions" element={<ProtectedRoute roles={['receptionist']}><ReceptionistPrescriptions /></ProtectedRoute>} />

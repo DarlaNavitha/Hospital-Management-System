@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Ct from "../../context/Ct.jsx";
 import API from "../../api/axios.js";
 import "../../styles/patientDashboard.css"; 
 
 const PatientDashboard = () => {
+    const navigate = useNavigate();
     const obj = useContext(Ct);
     const [patientInfo, setPatientInfo] = useState(null);
 
@@ -24,7 +26,7 @@ const PatientDashboard = () => {
         <div className="patient-dashboard">
 
             <div className="header">
-                <h1>Patient Dashboard</h1>
+                <h1>👤Patient Dashboard</h1>
 
                 <div className="welcome-box">
                     <span>Welcome back,</span>
@@ -68,12 +70,18 @@ const PatientDashboard = () => {
                     </Link>
                 </div>
 
-                <div className="card">
+                <div className="glass-card dash-card">
+
+                    <div className="icon">📅</div>
+
                     <h3>Book Appointment</h3>
-                    <p>Schedule your visit with doctors</p>
-                    <button onClick={() => navigate("/book-appointment")}>
+
+                    <p>Schedule your consultation with doctors</p>
+
+                    <Link to="/patient/book-appointment" className="view-btn">
                         Book Now
-                    </button>
+                    </Link>
+
                 </div>
 
             </div>

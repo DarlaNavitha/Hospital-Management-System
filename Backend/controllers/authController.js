@@ -5,112 +5,121 @@ const um = require("../models/usermodels");
 
 const register = async (req, res) => {
     try {
-        console.log("Full registration request body:", req.body);
-        let { name, email, password, role, age, gender, phone, bloodGroup, address } = req.body;
-        role = role || "patient";
-        role = role.toLowerCase();  
+        console.log("REQ BODY:", req.body);
 
-        if (!email || !password || !name) {
-            console.log("Missing required fields");
+        let {
+            name,
+            email,
+            password,
+            role,
+            age,
+            gender,
+            phone,
+            bloodGroup,
+            address,
+            specialization,
+            experience,
+            consultationFee
+        } = req.body;
+
+        role = (role || "patient").toLowerCase();
+
+        if (!name || !email || !password) {
             return res.status(400).json({ msg: "Please enter all required fields" });
         }
 
         email = email.trim().toLowerCase();
-        console.log("Registration attempt:", { name, email, role });
+
         let user = await um.findOne({ email });
         if (user) {
-            console.log("User already exists:", email);
             return res.status(400).json({ msg: "User already exists" });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        user = new um({ name, email, password: hashedPassword, role });
-        await user.save();
+
+        user = new um({
+            name,
+            email,
+            password: hashedPassword,
+            role
+        });
+
         await user.save();
         console.log("✅ USER SAVED:", user);
 
-        // Create patient profile if role is patient
-       if ((role || "patient") === "patient") {
+        // ================= PATIENT =================
+        if (role === "patient") {
             const pm = require("../models/patientmodels");
 
-            console.log("Creating patient profile...");
+            const patient = new pm({
+                name,
+                email,
+                age: Number(age) || 0,
+                gender: gender || "other",
+                phone: phone || "0000000000",
+                bloodGroup: bloodGroup || "Unknown",
+                address: address || "To be updated",
+                userId: user._id
+            });
 
-            try {
-                const patient = new pm({
-                    name,
-                    email,
-                    age: Number(age) || 0,
-                    gender: gender || "other",
-                    phone: phone || "0000000000",
-                    bloodGroup: bloodGroup || "Unknown",
-                    address: address || "To be updated",
-                    userId: user._id
-                });
-
-                const saved = await patient.save();
-                console.log("✅ Patient saved:", saved);
-
-            } catch (err) {
-                console.log("❌ Patient save failed:", err.message);
-            }
+            await patient.save();
+            console.log("✅ Patient profile created");
         }
 
-        // Create initial doctor profile if role is doctor
-        if (role === 'doctor') {
+        // ================= DOCTOR =================
+        if (role === "doctor") {
+            console.log("🔥 DOCTOR ROLE DETECTED");
+
+            if (!specialization || !experience || !consultationFee) {
+                return res.status(400).json({ msg: "All doctor fields required" });
+            }
+
             const dm = require("../models/doctormodels");
+
             const doctor = new dm({
                 userId: user._id,
-                specialization: "General Practice",
-                experience: 0,
-                availableDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                consultationFee: 50
+                specialization,
+                experience: Number(experience),
+                consultationFee: Number(consultationFee),
+                availableDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
             });
+
             await doctor.save();
-            console.log("Doctor profile created for:", email);
+            console.log("✅ Doctor profile created");
+
+            await sendDoctorWelcomeMail(user.email, user.name);
         }
 
-        console.log("User registered successfully:", email);
         res.status(201).json({ msg: "User registered successfully" });
+
     } catch (err) {
-        console.error("Registration error details:", err);
+        console.error("❌ Registration error:", err);
 
-        // Handle Mongoose validation errors
-        if (err.name === 'ValidationError') {
-            return res.status(400).json({ msg: Object.values(err.errors).map(e => e.message).join(", ") });
-        }
-
-        // Handle duplicate key error
         if (err.code === 11000) {
-            return res.status(400).json({ msg: "User or Patient with this email already exists" });
+            return res.status(400).json({ msg: "User already exists" });
         }
 
-        res.status(500).json({ msg: "Server Error. Please try again later." });
+        res.status(500).json({ msg: "Server Error" });
     }
 };
+
+
 
 const login = async (req, res) => {
     try {
         let { email, password } = req.body;
 
-        console.log("Login attempt for:", { email, passwordLength: password?.length });
-
         email = email.trim().toLowerCase();
 
         const user = await um.findOne({ email });
 
-        console.log("User from DB:", user); 
-
         if (!user) {
-            console.log("User not found in DB:", email);
             return res.status(400).json({ msg: "Invalid Credentials" });
         }
-
-        console.log("User found in DB, comparing passwords...");
 
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
-            console.log("Password mismatch for:", email);
             return res.status(400).json({ msg: "Invalid Credentials" });
         }
 
@@ -119,8 +128,6 @@ const login = async (req, res) => {
             "12345",
             { expiresIn: "1h" }
         );
-
-        console.log("Login successful for:", email);
 
         res.json({
             token,
@@ -239,5 +246,28 @@ const resetPassword = async (req, res) => {
     }
 };
 
+const sendDoctorWelcomeMail = async (email, name) => {
+    try {
+        console.log("🔥 Doctor block entered");
+        await transporter.sendMail({
+            from: '"MediCare Hospital Admin" <darlanavitha23@gmail.com>',
+            to: email,
+            subject: "Welcome to MediCare Hospital Portal",
+            html: `
+                <h2>Hello Dr. ${name},</h2>
+                <p>You have been added to the <b>MediCare Hospital Management System</b>.</p>
+                <p>Please use <b>Forgot Password</b> to set your password.</p>
+                <br/>
+                <p>Best Regards,<br/>MediCare Hospital Team</p>
+            `
+        });
 
-module.exports = { register, login, getProfile, sendotp, verifyotp, resetPassword };
+        console.log("📧 Doctor mail sent:", email);
+
+    } catch (err) {
+        console.log("❌ Mail error:", err.message);
+    }
+};
+
+
+module.exports = { register, login, getProfile, sendotp, verifyotp, resetPassword, sendDoctorWelcomeMail };
