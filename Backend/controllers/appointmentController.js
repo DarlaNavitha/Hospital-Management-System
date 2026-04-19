@@ -33,6 +33,7 @@ const addAppointment = async (req, res) => {
         const doctor = await dm.findById(doctorId);
 
         if (!doctor) {
+            console.log("❌ Doctor not found");
             return res.status(404).json({ msg: "Doctor not found" });
         }
 
@@ -111,7 +112,10 @@ const getDoctorAppointments = async (req, res) => {
         const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
         console.log("doctor found:", doctor);
-        if (!doctor) return res.json([]);
+        if (!doctor) {
+            console.log("❌ Doctor not found");
+            return res.status(404).json({ msg: "Doctor not found" });
+        }
 
         const appointments = await am.find({
             doctorId: doctor._id
@@ -129,7 +133,10 @@ const getDoctorPatients = async (req, res) => {
         const doctor = await dm.findOne({ userId: req.user.id });
         console.log("req.user.id:", req.user.id);
         console.log("doctor found:", doctor);
-        if (!doctor) return res.status(404).json({ msg: "Doctor not found" });
+        if (!doctor) {
+            console.log("❌ Doctor not found");
+            return res.status(404).json({ msg: "Doctor not found" });
+        }
 
         // Find all unique patientIds from appointments with this doctor
         const patientIds = await am.distinct("patientId", { doctorId: doctor._id });
@@ -149,15 +156,16 @@ const getDoctorRequests = async (req, res) => {
 
         const doctor = await dm.findOne({ userId: req.user.id });
 
-        console.log("req.user.id:", req.user.id);
-        console.log("doctor found:", doctor);
-
-        if (!doctor) return res.json([]);
+        console.log("Logged user:", req.user.id);
+        console.log("Doctor:", doctor);
+        console.log("Doctor ID:", doctor?._id);
 
         const requests = await am.find({
-            doctorId: doctor._id,
+            doctorId: doctor?._id,
             status: "pending"
-        }).populate("patientId", "name age gender");
+        }).populate("patientId", "name age gender phone address bloodGroup");
+
+        console.log("Appointments found:", requests.length);
 
         res.json(requests);
     } catch (err) {
