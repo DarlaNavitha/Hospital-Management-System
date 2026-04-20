@@ -41,7 +41,7 @@ const DoctorDashboard = () => {
 
                     <div className="profile-right">
                         <div><strong>Experience:</strong> {doctorProfile.experience} Years</div>
-                        <div><strong>Fee:</strong> ${doctorProfile.consultationFee}</div>
+                        <div><strong>Fee:</strong> ₹ {doctorProfile.consultationFee}</div>
                     </div>
                 </div>
             )}
