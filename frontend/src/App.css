@@ -164,7 +164,7 @@ body {
 
     background: 
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), /* dark overlay */
-        url("../assets/hosp.jpg") center/cover no-repeat;
+        url("../public/hosp.jpg") center/cover no-repeat;
 
     backdrop-filter: blur(4px);
 }
