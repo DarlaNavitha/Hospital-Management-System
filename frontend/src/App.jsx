@@ -53,7 +53,6 @@ const AppContent = () => {
 
         if (loginInfo) {
             try {
-                // 🔥 FIX: handle both JSON and plain token safely
                 let data;
 
                 try {
