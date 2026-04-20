@@ -12,7 +12,8 @@ const WritePrescription = () => {
     useEffect(() => {
         const fetchPatients = async () => {
             try {
-                const res = await API.get("/patients");
+                const res = await API.get("/appointments/doctor/patients");
+                console.log("DOCTOR PATIENTS:", res.data);
                 setPatients(res.data);
             } catch (err) {
                 console.error(err);

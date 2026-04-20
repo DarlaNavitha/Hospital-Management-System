@@ -16,12 +16,15 @@
 }
 
 /* ===== TITLE ===== */
-.page-title {
+.page-title{
     font-size: 2.6rem;
     font-weight: 700;
+    font-style: oblique;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 30px;
-    text-align: center;
     color: #ffffff;
+    text-align: center;
+    
 }
 
 /* ===== GRID ===== */
@@ -35,7 +38,7 @@
 }
 
 /* ===== CARD ===== */
-.myapp-page .glass-card {
+.appointments-grid .glass-card {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(18px);
     border-radius: 16px;
@@ -46,9 +49,10 @@
 }
 
 /* 🔥 HOVER EFFECT */
-.myapp-page .glass-card:hover {
+.appointments-grid .glass-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px rgba(56,189,248,0.3);
+    border: black 1px solid rgb(0, 0, 0);
 }
 
 /* ===== APPOINTMENT CARD ===== */

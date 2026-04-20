@@ -77,86 +77,82 @@ const Appointments = () => {
 
                 <div className="doctor-appointment-top">
 
+                    {/* LEFT SIDE */}
                     <div className="doctor-appointment-info">
 
-                        <div className="doctor-name-row">
+                        {/* TOP ROW */}
+                        <div className="doctor-top-row">
                             <h3>👤 {app.patientId?.name}</h3>
 
                             <button
                                 className="doctor-history-btn"
                                 onClick={() => toggleHistory(app.patientId?._id)}
                             >
-                                {history[app.patientId?._id] ? 'Hide History' : '📋 Medical History'}
+                                {history[app.patientId?._id] ? "Hide History" : "📋 Medical History"}
                             </button>
                         </div>
 
                         <p className="doctor-request-time">
-                            Requested: <strong>{new Date(app.date).toLocaleDateString("en-IN", {
-                                            day: "numeric",
-                                            month: "short",
-                                            year: "numeric"
-                                        })}</strong> at <strong>{app.time}</strong>
+                            Requested: <strong>{new Date(app.date).toLocaleDateString()}</strong> at <strong>{app.time}</strong>
                         </p>
 
-                        <div className="doctor-patient-grid">
-                            <div>
-                                <span>Age/Gender</span>
-                                <strong>{app.patientId?.age} / {app.patientId?.gender}</strong>
-                            </div>
-
-                            <div>
-                                <span>Blood Group</span>
-                                <strong className="doctor-blood">
-                                    {app.patientId?.bloodGroup || app.patientId?.bloodgroup}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <span>Contact</span>
-                                <strong>📞 {app.patientId?.phone}</strong>
-                            </div>
-
-                            <div className="full">
-                                <span>Address</span>
-                                <strong>📍 {app.patientId?.address}</strong>
-                            </div>
+                        {/* INLINE DETAILS */}
+                        <div className="doctor-inline-info">
+                            <span><b>Age/Gender:</b> {app.patientId?.age} / {app.patientId?.gender}</span>
+                            <span><b>Blood:</b> <span className="doctor-blood">{app.patientId?.bloodGroup}</span></span>
+                            <span><b>Contact:</b> 📞 {app.patientId?.phone}</span>
                         </div>
 
+                        <p className="doctor-address">
+                            📍 {app.patientId?.address}
+                        </p>
+
+                        {app.status === 'confirmed' && app.attendingTime && (
+                            <p className="doctor-confirmed-time">
+                                🕒 Scheduled: {app.attendingTime}
+                            </p>
+                        )}
                         {history[app.patientId?._id] && (
                             <div className="doctor-history-box">
-                                <h4>📜 Previous Prescriptions</h4>
 
-                                {history[app.patientId._id].length > 0 ? history[app.patientId._id].map(presc => (
-                                    <div key={presc._id} className="doctor-history-item">
+                                <h4><b>📜 Prescriptions</b></h4>
 
-                                        <div className="doctor-history-head">
-                                            <strong>Dr. {presc.doctorId?.userId?.name}</strong>
-                                            <span>{new Date(presc.createdAt).toLocaleDateString()}</span>
-                                        </div>
+                                {history[app.patientId._id].length > 0 ? (
+                                    history[app.patientId._id].map(presc => (
+                                        <div key={presc._id} className="doctor-history-item">
 
-                                        <div>
-                                            <strong>Medicines:</strong>
+                                            <div className="doctor-history-head">
+                                                <strong>Dr. {presc.doctorId?.userId?.name}</strong>
+                                                <span>{new Date(presc.createdAt).toLocaleDateString()}</span>
+                                            </div>
+
                                             <ul>
                                                 {presc.medicines?.map((m, i) => (
                                                     <li key={i}>
-                                                        {m.name} {m.dosage && `(${m.dosage})`} {m.instructions && `- ${m.instructions}`}
+                                                        {m.name} {m.dosage && `(${m.dosage})`}
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </div>
 
-                                    </div>
-                                )) : (
-                                    <p className="doctor-no-history">No previous prescriptions found.</p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p className="doctor-no-history">
+                                        No prescriptions found.
+                                    </p>
                                 )}
+
                             </div>
                         )}
-
                     </div>
 
-                    <span className={`doctor-status ${app.status}`}>
-                        {app.status.toUpperCase()}
-                    </span>
+                    {/* RIGHT SIDE STATUS */}
+                    <div className="doctor-right">
+                        <span className={`doctor-status ${app.status}`}>
+                            {app.status.toUpperCase()}
+                        </span>
+                    </div>
+
                 </div>
 
                 {app.status === 'pending' && (
@@ -175,12 +171,6 @@ const Appointments = () => {
                             </button>
                         </div>
                     </div>
-                )}
-
-                {app.status === 'confirmed' && app.attendingTime && (
-                    <p className="doctor-confirmed-time">
-                        🕒 Scheduled: {app.attendingTime}
-                    </p>
                 )}
 
             </div>

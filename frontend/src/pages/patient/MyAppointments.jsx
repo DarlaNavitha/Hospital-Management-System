@@ -27,7 +27,7 @@ const MyAppointments = () => {
                 {appointments.length > 0 ? appointments.map(app => (
                     <div key={app._id} className="glass-card appointment-card">
 
-                        <h3>👨‍⚕️ {app.doctorId?.userId?.name}</h3>
+                        <h3>👨‍⚕️ Dr. {app.doctorId?.userId?.name}</h3>
                         <p className="specialization">
                             {app.doctorId?.specialization}
                         </p>
@@ -40,7 +40,11 @@ const MyAppointments = () => {
 
                         <div className="divider"></div>
 
-                        <p><strong>Date:</strong> {app.date}</p>
+                        <p><strong>Date:</strong> 📅 {new Date(app.date).toLocaleDateString("en-IN", {
+                                            day: "numeric",
+                                            month: "short",
+                                            year: "numeric"
+                                        })}</p>
                         <p><strong>Request Time:</strong> {app.time}</p>
 
                         {app.status === 'confirmed' && app.attendingTime && (
