@@ -9,7 +9,7 @@
 
     background:
         linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.95)),
-        url("../public/hosp4.jpg") center/cover no-repeat;
+          url("/hosp4.jpg") center/cover no-repeat;
 
     color: white;
     font-family: 'Poppins', sans-serif;

@@ -12,7 +12,7 @@
 
     /* 🔥 BACKGROUND IMAGE + OVERLAY */
     background: linear-gradient(rgba(2,6,23,0.55), rgba(2,6,23,0.95)),
-                url("../public/hosp2.jpg") center/cover no-repeat fixed;
+                  url("/hosp2.jpg") center/cover no-repeat fixed;
 }
 
 /* ===== TITLE ===== */
