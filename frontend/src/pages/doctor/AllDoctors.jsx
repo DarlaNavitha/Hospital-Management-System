@@ -11,7 +11,7 @@ const AllDoctors = () => {
 
     const fetchData = async () => {
         try {
-            const docRes = await API.get("/appointment/doctors/patient");
+            const docRes = await API.get("/doctors");
             setDoctors(docRes.data);
         } catch (err) {
             console.error(err);
