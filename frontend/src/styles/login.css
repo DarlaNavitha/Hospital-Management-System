@@ -167,69 +167,64 @@
 }
 
 /* ===== RESPONSIVE ===== */
-/* ===== MOBILE ENHANCEMENTS ===== */
+/* ===== MOBILE FIX (IMPORTANT) ===== */
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
 
     .login-page {
-        padding: 20px;
-        align-items: flex-start; /* prevents overflow on small screens */
+        padding: 15px;
+        align-items: flex-start;
     }
 
     .login-container {
-        width: 100%;
+        flex-direction: column;
         height: auto;
-        border-radius: 14px;
+        width: 100%;
     }
 
-    /* RIGHT PANEL */
-    .login-right {
-        padding: 25px 20px;
+    /* SHOW WELCOME AT TOP */
+    .login-left {
+        display: flex;
+        width: 100%;
+        padding: 25px 15px;
+        justify-content: center;
+        align-items: center;
     }
 
-    .login-right h2 {
-        font-size: 1.4rem;
+    .left-content {
         text-align: center;
+        align-items: center;
     }
 
-    /* INPUTS */
-    .login-right input {
-        width: 100%;
-        font-size: 0.95rem;
+    .login-left h2 {
+        font-size: 1.8rem;
     }
 
-    /* BUTTON */
-    .login-right button {
-        width: 100%;
+    .login-left p {
         font-size: 1rem;
     }
 
-    /* ERROR */
+    /* LOGIN FORM AT BOTTOM */
+    .login-right {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    .login-right h2 {
+        text-align: center;
+    }
+
+    .login-right input,
+    .login-right button {
+        width: 100%;
+    }
+
     .error {
         text-align: center;
     }
 
-    /* FORGOT LINK */
     .forgot {
+        text-align: center;
         font-size: 0.9rem;
-    }
-}
-
-/* EXTRA SMALL DEVICES */
-@media (max-width: 480px) {
-
-    .login-right {
-        padding: 20px 15px;
-    }
-
-    .login-right h2 {
-        font-size: 1.2rem;
-    }
-
-    .login-right input {
-        padding: 10px;
-    }
-
-    .login-right button {
-        padding: 10px;
     }
 }
