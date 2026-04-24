@@ -167,27 +167,36 @@
 }
 
 /* ===== RESPONSIVE ===== */
-/* ===== FINAL MOBILE FIX ===== */
+/* ===== FINAL MOBILE CENTERED FIX ===== */
 @media (max-width: 768px) {
 
     .login-page {
-        padding: 15px;
-        align-items: flex-start;
+        padding: 30px 15px;              /* 🔥 top gap */
+        display: flex;
+        justify-content: center;
+        align-items: center;             /* center vertically */
+        min-height: 100vh;
     }
 
     .login-container {
         display: flex;
-        flex-direction: column !important;   /* 🔥 force vertical */
-        height: auto !important;
+        flex-direction: column !important;
+
         width: 100%;
+        max-width: 400px;                /* 🔥 centered card look */
+        margin: auto;                    /* 🔥 center from all sides */
+
+        height: auto;
+        border-radius: 16px;
     }
 
-    /* TOP SECTION (WELCOME) */
+    /* ===== TOP (WELCOME) ===== */
     .login-left {
-        flex: none !important;        /* 🔥 remove side-by-side */
+        flex: none !important;
         width: 100%;
-        display: flex !important;
         padding: 25px 15px;
+
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -197,23 +206,16 @@
         align-items: center;
     }
 
-    .login-left h2 {
-        font-size: 1.8rem;
+    /* ===== GAP BETWEEN SECTIONS ===== */
+    .login-left {
+        margin-bottom: 10px;             /* 🔥 small gap */
     }
 
-    .login-left p {
-        font-size: 1rem;
-    }
-
-    /* BOTTOM SECTION (LOGIN FORM) */
+    /* ===== BOTTOM (LOGIN FORM) ===== */
     .login-right {
-        flex: none !important;        /* 🔥 key fix */
+        flex: none !important;
         width: 100%;
         padding: 25px 15px;
-    }
-
-    .login-right h2 {
-        text-align: center;
     }
 
     /* FULL WIDTH INPUTS */
@@ -222,12 +224,12 @@
         width: 100%;
     }
 
-    .error {
+    .login-right h2 {
         text-align: center;
     }
 
+    .error,
     .forgot {
         text-align: center;
-        font-size: 0.9rem;
     }
 }
