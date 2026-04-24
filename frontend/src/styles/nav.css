@@ -125,7 +125,7 @@
         width: 70%;
         height: 100vh;
 
-        background: #909dd692;
+        background: black !important;
 
         display: flex;
         flex-direction: column;
