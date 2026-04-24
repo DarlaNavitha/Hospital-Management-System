@@ -232,3 +232,102 @@
 .home.container-lg .empty-state p {
     color: #94a3b8;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .home.container-lg {
+        padding: 90px 15px;
+    }
+
+    /* HEADER */
+    .home.container-lg .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .home.container-lg .sub-text {
+        font-size: 0.85rem;
+    }
+
+    /* BACK BUTTON FIX */
+    .home.container-lg .outline-btn {
+        position: static;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* SEARCH */
+    .home.container-lg .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .home.container-lg .search-box input {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    /* CARD */
+    .home.container-lg .prescription-card {
+        padding: 16px;
+    }
+
+    /* HEADER INSIDE CARD */
+    .home.container-lg .presc-header {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .home.container-lg .presc-header h3 {
+        font-size: 1.1rem;
+    }
+
+    /* DOCTOR */
+    .home.container-lg .doctor {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* MED BOX */
+    .home.container-lg .med-box {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .home.container-lg .med-box ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    /* BILL */
+    .home.container-lg .bill-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* EMPTY */
+    .home.container-lg .empty-state {
+        padding: 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .home.container-lg .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .home.container-lg .prescription-card {
+        padding: 14px;
+    }
+
+    .home.container-lg .presc-header h3 {
+        font-size: 1rem;
+    }
+}

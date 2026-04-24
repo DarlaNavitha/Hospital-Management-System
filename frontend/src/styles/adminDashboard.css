@@ -182,16 +182,71 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== MOBILE RESPONSIVE FIX ===== */
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2rem;
+
+    .admin-dashboard {
+        padding: 90px 15px 40px;
     }
 
+    .page-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    /* GRID → 1 column */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* CARD PADDING */
+    .glass-card {
+        padding: 18px;
+    }
+
+    /* ICON SIZE */
+    .icon {
+        font-size: 2.2rem;
+    }
+
+    /* TEXT */
     .action-card h3 {
         font-size: 1.2rem;
     }
 
+    .action-card p {
+        font-size: 1rem;
+    }
+
+    /* TABLE CARD FULL WIDTH */
+    .table-card {
+        max-width: 100%;
+    }
+
+    /* TABLE SCROLL */
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    /* TABLE COMPACT */
     .doctor-table {
         font-size: 0.9rem;
+        border-spacing: 10px 8px;
+        min-width: 600px; /* keeps structure */
+    }
+
+    /* BUTTONS STACK */
+    .edit-btn,
+    .delete-btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* GO BUTTON FULL WIDTH */
+    .go-btn {
+        width: 100%;
+        text-align: center;
     }
 }

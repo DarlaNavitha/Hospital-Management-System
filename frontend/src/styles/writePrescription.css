@@ -233,3 +233,104 @@ select option {
     background: linear-gradient(135deg, #06b6d4, #3b82f6);
     box-shadow: 0 0 12px rgba(56,189,248,0.5);
 }
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+
+    .main-card {
+        max-width: 95%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .prescription-page {
+        padding: 80px 15px;
+    }
+
+    /* HEADER FIX */
+    .page-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prescription-page .page-header h1 {
+        position: static;           /* 🔥 remove absolute */
+        transform: none;
+        margin-bottom: 0 !important;
+        font-size: 1.5rem;
+    }
+
+    .back-btn {
+        align-self: flex-start;
+    }
+
+    /* CARD */
+    .glass-card {
+        padding: 18px;
+        margin-top: 20px;
+    }
+
+    /* GRID STACK */
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid .full {
+        grid-column: span 1;
+    }
+
+    /* MED GRID */
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* MED HEADER */
+    .med-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* BUTTON */
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+
+    .prescription-page {
+        padding: 70px 10px;
+    }
+
+    .glass-card {
+        padding: 15px;
+    }
+
+    .prescription-page .page-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}

@@ -88,3 +88,65 @@
     padding: 20px;
     color: #94a3b8;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .doctors-page {
+        padding: 90px 15px 40px;
+    }
+
+    /* HEADER */
+    .doctors-page .page-header h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    /* CARD */
+    .doctors-page .glass-card {
+        padding: 16px;
+    }
+
+    /* TABLE SCROLL */
+    .doctors-page .table-wrapper {
+        overflow-x: auto;
+    }
+
+    /* TABLE */
+    .doctors-page .doctor-table {
+        min-width: 600px; /* keeps structure */
+        font-size: 0.9rem;
+    }
+
+    /* CELL PADDING */
+    .doctors-page .doctor-table th,
+    .doctors-page .doctor-table td {
+        padding: 10px 12px;
+    }
+
+    /* TEXT */
+    .doctors-page .doc-name {
+        font-size: 0.95rem;
+    }
+
+    .doctors-page .doc-email {
+        font-size: 0.75rem;
+    }
+
+    /* EMPTY */
+    .doctors-page .empty {
+        font-size: 0.9rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .doctors-page .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .doctors-page .glass-card {
+        padding: 14px;
+    }
+}

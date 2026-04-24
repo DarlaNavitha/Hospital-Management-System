@@ -122,3 +122,91 @@
 .empty {
     color: #94a3b8;
 }
+
+/* ===== RESPONSIVE ===== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    .reports-page {
+        padding: 90px 4%;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .reports-page {
+        padding: 80px 15px;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    /* GRID → SINGLE COLUMN */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CARDS */
+    .glass-card {
+        padding: 16px;
+    }
+
+    .stat-card .icon {
+        font-size: 2rem;
+    }
+
+    /* PROGRESS */
+    .progress-header {
+        font-size: 0.85rem;
+    }
+
+    .progress-bar {
+        height: 6px;
+    }
+
+    /* ACTIVITY */
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .activity-item p {
+        font-size: 0.75rem;
+    }
+
+    /* STATUS */
+    .status {
+        align-self: flex-end;
+    }
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .page-title {
+        font-size: 1.4rem;
+    }
+
+    .glass-card {
+        padding: 14px;
+    }
+
+    .stat-card .icon {
+        font-size: 1.8rem;
+    }
+}

@@ -317,3 +317,92 @@
 
     border-color: rgba(56,189,248,0.3);
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .home.container-lg {
+        padding: 90px 15px;
+    }
+
+    /* HEADER STACK */
+    .home.container-lg .page-header {
+        text-align: center;
+    }
+
+    .home.container-lg .page-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .home.container-lg .page-header p {
+        font-size: 0.9rem;
+    }
+
+    /* BACK BUTTON FIX */
+    .home.container-lg .outline-btn {
+        position: static;
+        margin-top: 10px;
+    }
+
+    /* SEARCH STACK */
+    .home.container-lg .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .home.container-lg .search-box input {
+        width: 100%;
+    }
+
+    /* CARD */
+    .home.container-lg .appointment-card {
+        padding: 16px;
+    }
+
+    /* HEADER INSIDE CARD STACK */
+    .home.container-lg .appointment-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home.container-lg .title-row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* PATIENT INFO */
+    .home.container-lg .patient-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* ACTION BOX */
+    .home.container-lg .action-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home.container-lg .action-box input {
+        width: 100%;
+    }
+
+    /* BUTTONS FULL WIDTH */
+    .home.container-lg .success-btn,
+    .home.container-lg .danger-btn {
+        width: 100%;
+    }
+
+    /* HISTORY */
+    .home.container-lg .history-item {
+        text-align: center;
+    }
+
+    /* EMPTY CARD */
+    .home.container-lg .empty {
+        font-size: 0.85rem;
+        padding: 20px;
+    }
+}

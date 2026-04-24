@@ -271,14 +271,94 @@ select:focus {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1000px) {
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .manage-page {
+        padding: 90px 15px 40px;
+    }
+
+    /* HEADER STACK */
+    .page-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    /* FIX TOGGLE BUTTON POSITION */
+    .toggle-btn {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* GRID FIX */
     .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr !important;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* FORM CARD */
+    .glass-card {
+        padding: 18px;
+    }
+
+    /* INPUTS */
+    input,
+    select {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    /* BUTTON ROW STACK */
+    .btn-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    /* TABLE SCROLL */
+    .doctor-table {
+        min-width: 600px;
+        font-size: 0.9rem;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    /* ACTION BUTTONS STACK */
+    .edit-btn,
+    .delete-btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
     }
 }
 
-@media (max-width: 600px) {
-    .grid-4 {
-        grid-template-columns: 1fr;
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .glass-card {
+        padding: 15px;
+    }
+
+    .form-card h2 {
+        font-size: 1.3rem;
     }
 }

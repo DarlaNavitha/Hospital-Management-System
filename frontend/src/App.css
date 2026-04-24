@@ -168,3 +168,99 @@ body {
 
     backdrop-filter: blur(4px);
 }
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+
+    .home {
+        padding: 3rem 6%;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav {
+        padding: 0 4%;
+    }
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 15px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav a {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+    }
+
+    /* HOME */
+    .home {
+        padding: 2rem 15px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* FORM */
+    .form,
+    .reg {
+        padding: 1.5rem 1rem;
+    }
+
+    .form input,
+    .reg input,
+    .form select,
+    .reg select {
+        max-width: 100%;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .form button,
+    .reg button {
+        max-width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* CARD */
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+
+    .nav a {
+        font-size: 0.85rem;
+    }
+
+    .form input,
+    .reg input {
+        font-size: 0.85rem;
+    }
+
+    .form button,
+    .reg button {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+        border-radius: 14px;
+    }
+}

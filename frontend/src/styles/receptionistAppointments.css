@@ -168,3 +168,96 @@
 
     color: #94a3b8;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    /* CONTAINER */
+    .container-lg {
+        padding: 0 15px;
+    }
+
+    /* HEADER STACK */
+    .page-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* SEARCH */
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    /* CARD */
+    .appointment-card {
+        padding: 12px;
+    }
+
+    /* HEADER ROW */
+    .appointment-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* TITLE ROW */
+    .title-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    /* PATIENT INFO */
+    .patient-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* HISTORY */
+    .history-box {
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* ACTION BOX */
+    .action-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* BUTTONS */
+    .btn-success,
+    .btn-danger {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .patient-info strong {
+        font-size: 0.9rem;
+    }
+
+    .status {
+        font-size: 0.7rem;
+    }
+
+    .empty-state {
+        padding: 1.5rem;
+    }
+}

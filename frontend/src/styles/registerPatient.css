@@ -217,8 +217,76 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== MOBILE ENHANCEMENTS ===== */
 @media (max-width: 768px) {
-    .register-patient .form-grid {
-        grid-template-columns: 1fr;
+
+    .register-patient {
+        padding: 90px 15px;
+    }
+
+    /* HEADER */
+    .register-patient .gradient-text {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .register-patient .sub-text {
+        font-size: 0.9rem;
+    }
+
+    /* CANCEL BUTTON FIX */
+    .register-patient .cancel-btn {
+        position: static;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* FORM CARD */
+    .register-patient .form-card {
+        padding: 20px;
+    }
+
+    /* LABEL */
+    .register-patient label {
+        font-size: 1rem;
+    }
+
+    /* INPUTS */
+    .register-patient .form-group input,
+    .register-patient .form-group select,
+    .register-patient .form-group textarea {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    /* TEXTAREA */
+    .register-patient textarea {
+        height: 90px;
+    }
+
+    /* BUTTON */
+    .register-patient .primary-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .register-patient .gradient-text {
+        font-size: 1.4rem;
+    }
+
+    .register-patient .form-card {
+        padding: 15px;
+    }
+
+    .register-patient label {
+        font-size: 0.9rem;
     }
 }

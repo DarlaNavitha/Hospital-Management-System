@@ -169,12 +169,90 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== MOBILE ENHANCEMENTS ===== */
 @media (max-width: 768px) {
+
     .prescriptions-page {
-        padding: 120px 15px 50px;
+        padding: 100px 15px 40px;
+    }
+
+    /* TITLE */
+    .prescriptions-page .page-title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    /* CARD */
+    .prescriptions-page .prescription-card {
+        padding: 15px;
+    }
+
+    /* HEADER STACK */
+    .prescriptions-page .prescription-header {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .prescriptions-page .prescription-header h3 {
+        font-size: 1.05rem;
+    }
+
+    /* MEDICINE */
+    .prescriptions-page .med-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .prescriptions-page .med-name {
+        font-size: 0.95rem;
+    }
+
+    .prescriptions-page .dosage {
+        font-size: 0.85rem;
+    }
+
+    .prescriptions-page .instructions {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* NOTES */
+    .prescriptions-page .notes-box {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* BILLING */
+    .prescriptions-page .bill-row,
+    .prescriptions-page .bill-total {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3px;
+    }
+
+    /* EMPTY */
+    .prescriptions-page .empty-card {
+        padding: 25px;
+        font-size: 0.95rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .prescriptions-page .page-title {
+        font-size: 1.5rem;
     }
 
     .prescriptions-page .prescription-card {
-        padding: 15px;
+        padding: 12px;
+    }
+
+    .prescriptions-page .med-name {
+        font-size: 0.9rem;
     }
 }

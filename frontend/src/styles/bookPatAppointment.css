@@ -251,3 +251,75 @@
   background: #0f172a;
   color: #fff;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+  .page-container {
+    padding: 20px 15px;
+  }
+
+  /* TITLE */
+  .page-title {
+    font-size: 22px;
+  }
+
+  /* GRID */
+  .doctor-grid {
+    gap: 15px;
+  }
+
+  /* CARD */
+  .doctor-card {
+    padding: 16px;
+  }
+
+  .doctor-card h2 {
+    font-size: 18px;
+  }
+
+  .doctor-card p {
+    font-size: 13px;
+  }
+
+  /* BUTTON FULL WIDTH */
+  .book-btn,
+  .view-btn {
+    width: 100%;
+  }
+
+  /* FORM */
+  .appointment-form {
+    padding: 18px;
+    max-width: 100%;
+  }
+
+  /* INPUTS */
+  .appointment-form input,
+  .form-input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* BUTTON STACK */
+  .appointment-form button {
+    width: 100%;
+  }
+
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .doctor-card {
+    padding: 14px;
+  }
+
+  .appointment-form {
+    padding: 15px;
+  }
+}

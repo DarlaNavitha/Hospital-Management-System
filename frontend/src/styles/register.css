@@ -146,13 +146,60 @@ textarea {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== MOBILE ENHANCEMENTS ===== */
 @media (max-width: 768px) {
-    .register-container {
-        flex-direction: column;
+
+    .register-page {
+        padding: 20px;
+        align-items: flex-start; /* prevents overflow */
     }
 
-    .register-left {
-        border-right: none;
-        padding-right: 0;
+    .register-container {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    /* HEADINGS */
+    .register-left h2,
+    .register-right h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    /* GRID → SINGLE COLUMN */
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* INPUTS */
+    .register-container input,
+    .register-container select,
+    .register-container textarea {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    /* BUTTON */
+    .register-bottom button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .register-container {
+        padding: 15px;
+    }
+
+    .register-left h2,
+    .register-right h2 {
+        font-size: 1.2rem;
+    }
+
+    textarea {
+        min-height: 70px;
     }
 }

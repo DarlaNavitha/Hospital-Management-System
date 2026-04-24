@@ -142,3 +142,83 @@
         display: none;
     }
 }
+
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+
+    .reset-container {
+        width: 95%;
+        height: auto; /* 🔥 allow flexible height */
+    }
+
+    .reset-right {
+        padding: 30px;
+    }
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .reset-page {
+        padding: 20px 12px;
+    }
+
+    .reset-container {
+        flex-direction: column;
+        height: auto;
+        border-radius: 14px;
+    }
+
+    /* hide left */
+    .reset-left {
+        display: none;
+    }
+
+    .reset-right {
+        padding: 25px 18px;
+        gap: 12px;
+    }
+
+    .reset-right h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .reset-right p {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .reset-right input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .reset-right button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+
+    .reset-container {
+        box-shadow: none; /* cleaner on small screens */
+    }
+
+    .reset-right {
+        padding: 20px 14px;
+    }
+
+    .reset-right h2 {
+        font-size: 1.2rem;
+    }
+
+    .reset-right p {
+        font-size: 0.75rem;
+    }
+}

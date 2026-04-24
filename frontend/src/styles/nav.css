@@ -94,3 +94,56 @@
 .btn-danger:hover {
     background: black; /* 🔥 hover black */
 }
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 15px;
+    }
+
+    /* BRAND */
+    .brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* LINKS STACK */
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    .nav-link,
+    .btn-outline,
+    .btn-gradient,
+    .btn-danger {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn-gradient,
+    .btn-outline,
+    .btn-danger {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

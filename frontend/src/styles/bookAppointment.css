@@ -216,3 +216,74 @@
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .home.form-container {
+        padding: 90px 15px;
+    }
+
+    /* HEADER STACK */
+    .home .header-card {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* CANCEL BUTTON FIX */
+    .home .glass-btn {
+        width: 100%;
+    }
+
+    /* FORM CARD */
+    .home .form-card {
+        padding: 18px;
+    }
+
+    /* INPUT SIZE */
+    .home input,
+    .home select {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    /* ROW → SINGLE COLUMN */
+    .home .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* PREVIEW GRID */
+    .home .preview-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* BUTTON */
+    .home .primary-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* ERROR */
+    .home .error-box {
+        font-size: 0.9rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .home .header-card h1 {
+        font-size: 1.4rem;
+    }
+
+    .home .header-card p {
+        font-size: 0.85rem;
+    }
+
+    .home .form-card {
+        padding: 15px;
+    }
+}

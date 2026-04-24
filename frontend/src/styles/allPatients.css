@@ -247,14 +247,91 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .ap-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* ===== MOBILE ENHANCEMENTS ===== */
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
+    .ap-page {
+        padding: 90px 15px;
+    }
+
+    /* HEADER STACK */
+    .ap-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* BACK BUTTON FIX */
+    .ap-outline-btn {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .ap-title {
+        font-size: 1.8rem;
+    }
+
+    .ap-header p {
+        font-size: 0.9rem;
+    }
+
+    /* SEARCH STACK */
+    .ap-search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ap-search-box input {
+        width: 100%;
+    }
+
+    /* GRID GAP */
     .ap-grid {
-        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* CARD */
+    .ap-card {
+        padding: 18px;
+    }
+
+    /* RIGHT SECTION FIX */
+    .ap-right {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* TOP TEXT */
+    .ap-top h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .ap-top small {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    /* INFO TEXT */
+    .ap-info {
+        font-size: 0.9rem;
+    }
+
+    /* HISTORY */
+    .ap-history {
+        padding: 10px;
+    }
+
+    .ap-history-head {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    /* BUTTON */
+    .ap-mini-btn {
+        width: 100%;
+        text-align: center;
     }
 }

@@ -272,3 +272,91 @@
     align-items: center;
     justify-content: center;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .doctor-dashboard {
+        padding: 90px 15px;
+    }
+
+    /* TITLE */
+    .page-title {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    /* PROFILE CARD STACK */
+    .profile-card {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .profile-right {
+        text-align: center;
+    }
+
+    /* GRID */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* DASHBOARD CARD */
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    /* RECENT CARD */
+    .recent-card {
+        max-width: 100%;
+        padding: 18px;
+    }
+
+    /* LIST ITEMS STACK */
+    .recent-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* META TEXT CENTER */
+    .meta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* STATUS BOX CENTER */
+    .status-box {
+        text-align: center;
+    }
+
+    /* BUTTON FULL WIDTH */
+    .bottom-btn,
+    .card-btn,
+    .view-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .page-title {
+        font-size: 1.4rem;
+    }
+
+    .profile-left h2 {
+        font-size: 1.2rem;
+    }
+
+    .dashboard-card h2 {
+        font-size: 1rem;
+    }
+
+    .dashboard-card p {
+        font-size: 0.85rem;
+    }
+}

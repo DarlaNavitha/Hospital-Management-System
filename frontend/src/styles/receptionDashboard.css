@@ -237,8 +237,93 @@
 }
 
 /* Mobile */
-@media (max-width: 576px) {
+/* ===== MOBILE ENHANCEMENTS ===== */
+@media (max-width: 768px) {
+
+    .reception-page {
+        padding: 90px 15px;
+    }
+
+    /* TITLE */
+    .reception-page .page-title {
+        font-size: 1.8rem;
+    }
+
+    /* GRID */
     .reception-page .dashboard-grid {
-        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* CARD */
+    .reception-page .card {
+        padding: 18px;
+    }
+
+    .reception-page .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .reception-page .card p {
+        font-size: 0.8rem;
+    }
+
+    /* RECENT CARD */
+    .reception-page .recent-card {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* APPOINTMENT ITEM STACK */
+    .reception-page .appointment-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* LEFT */
+    .reception-page .appointment-left {
+        text-align: center;
+    }
+
+    .reception-page .meta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* RIGHT */
+    .reception-page .appointment-right {
+        align-items: center;
+    }
+
+    /* BUTTON */
+    .reception-page .outline-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* STATUS */
+    .reception-page .status {
+        font-size: 0.7rem;
+    }
+
+    /* TIME */
+    .reception-page .time {
+        font-size: 0.75rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .reception-page .page-title {
+        font-size: 1.5rem;
+    }
+
+    .reception-page .card {
+        padding: 15px;
+    }
+
+    .reception-page .appointment-left strong {
+        font-size: 0.9rem;
     }
 }

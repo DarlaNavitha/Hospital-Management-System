@@ -51,3 +51,50 @@
 .form button:hover {
     background: black;
 }
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+    .auth-page {
+        padding: 15px;
+        align-items: flex-start; /* prevents vertical overflow issues */
+    }
+
+    .form,
+    .reg {
+        padding: 1.8rem;
+        border-radius: 16px;
+    }
+
+    /* INPUT SIZE */
+    .form input,
+    .reg input,
+    .form select,
+    .reg select {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    /* BUTTON FULL WIDTH */
+    .form button,
+    .reg button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .form,
+    .reg {
+        padding: 1.4rem;
+    }
+
+    .form h2,
+    .reg h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
