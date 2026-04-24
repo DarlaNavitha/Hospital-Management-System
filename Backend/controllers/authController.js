@@ -250,7 +250,7 @@ const sendDoctorWelcomeMail = async (email, name) => {
     try {
         console.log("📨 Sending mail to:", email);
 
-        const loginUrl = "https://hospital-management-system-dxf5.onrender.com/login"; // your frontend URL
+        const loginUrl = "https://hospital-management-system-fe.7fsg.onrender.com/login"; // your frontend URL
         const defaultPassword = "medicare123";
 
         await transporter.sendMail({
