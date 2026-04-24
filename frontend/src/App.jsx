@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import Cookies from "js-cookie";
 
@@ -74,7 +74,7 @@ const AppContent = () => {
     }, []);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="app-container" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Nav />
                 <main style={{ flex: 1 }}>
@@ -112,7 +112,7 @@ const AppContent = () => {
                 </main>
                 <Footer />
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
