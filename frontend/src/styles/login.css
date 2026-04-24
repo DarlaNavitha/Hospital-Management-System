@@ -167,8 +167,7 @@
 }
 
 /* ===== RESPONSIVE ===== */
-/* ===== MOBILE FIX (IMPORTANT) ===== */
-/* ===== MOBILE FIX ===== */
+/* ===== FINAL MOBILE FIX ===== */
 @media (max-width: 768px) {
 
     .login-page {
@@ -177,15 +176,17 @@
     }
 
     .login-container {
-        flex-direction: column;
-        height: auto;
+        display: flex;
+        flex-direction: column !important;   /* 🔥 force vertical */
+        height: auto !important;
         width: 100%;
     }
 
-    /* SHOW WELCOME AT TOP */
+    /* TOP SECTION (WELCOME) */
     .login-left {
-        display: flex;
+        flex: none !important;        /* 🔥 remove side-by-side */
         width: 100%;
+        display: flex !important;
         padding: 25px 15px;
         justify-content: center;
         align-items: center;
@@ -204,8 +205,9 @@
         font-size: 1rem;
     }
 
-    /* LOGIN FORM AT BOTTOM */
+    /* BOTTOM SECTION (LOGIN FORM) */
     .login-right {
+        flex: none !important;        /* 🔥 key fix */
         width: 100%;
         padding: 25px 15px;
     }
@@ -214,6 +216,7 @@
         text-align: center;
     }
 
+    /* FULL WIDTH INPUTS */
     .login-right input,
     .login-right button {
         width: 100%;
