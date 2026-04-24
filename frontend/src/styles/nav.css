@@ -125,7 +125,7 @@
         width: 70%;
         height: 100vh;
 
-        background: rgb(248, 245, 245) !important;
+        background: rgb(0, 0, 0) !important;
 
         display: flex;
         flex-direction: column;
@@ -150,6 +150,7 @@
     .btn-danger {
         width: 80%;
         text-align: center;
+        color: thistle !important;
     }
 }
 
