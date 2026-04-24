@@ -21,8 +21,7 @@ const Nav = () => {
 
             {/* BRAND + MENU ICON */}
             <div className="brand">
-                <span className="brand-icon">🏥</span>
-                MediCare Hospital
+                <span className="brand-icon">🏥 MediCare Hospital</span>
 
                 {/* MENU BUTTON */}
                 <span className="menu-toggle" onClick={() => setOpen(!open)}>

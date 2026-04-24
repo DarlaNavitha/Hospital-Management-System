@@ -109,6 +109,7 @@
 
     .menu-toggle {
         display: block;
+        align-items: right;
     }
 
     .nav {
